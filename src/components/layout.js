@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
+import Head from './head'
 import Header from './header'
+
 import './layout.css'
 
-const Layout = ({ children }) => (
+const Layout = ({ children, location }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -17,18 +18,10 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => (
+    render={({site}) => (
       <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Head metaData={site.siteMetadata} />
+        <Header location={location} siteTitle={site.siteMetadata.title} />
         <div
           style={{
             margin: '0 auto',

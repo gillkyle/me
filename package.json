@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "kylegill",
+  "description": "Personal website for Kyle Gill",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Kyle Gill <kyle.robert.gill@gmail.com>",
   "dependencies": {
     "gatsby": "^2.0.19",
     "gatsby-image": "^2.0.15",
@@ -13,8 +13,10 @@
     "gatsby-source-filesystem": "^2.0.4",
     "gatsby-transformer-sharp": "^2.1.4",
     "react": "^16.5.1",
+    "react-anchor-link-smooth-scroll": "^1.0.11",
     "react-dom": "^16.5.1",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "styled-components": "^4.0.2"
   },
   "keywords": [
     "gatsby"
@@ -24,6 +26,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"src/**/*.js\"",
+    "start": "gatsby develop",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
@@ -31,6 +34,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/gillkyle/me"
   }
 }

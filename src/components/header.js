@@ -1,33 +1,52 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+import styled from 'styled-components'
 
-const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </div>
+import { COLORS, FONT_WEIGHTS, MARGIN, SHADOW } from '../styles/constants'
+
+const HeaderBar = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: ${COLORS['white']};
+  height: 100px;
+  padding: ${MARGIN.default};
+  box-shadow: ${SHADOW};
+`
+
+const NavLinks = styled.div`
+  display: grid;
+  grid-gap: 45px;
+  grid-template-columns: repeat(6, auto);
+  align-items: center;
+`
+
+const NavLink = styled(AnchorLink)`
+  font-weight: ${FONT_WEIGHTS.bold};
+  color: ${COLORS.blue};
+`
+
+const NavLinkButton = styled.div`
+  cursor: pointer;
+  background-color: ${COLORS.blue};
+  color: ${COLORS.white};
+  border-radius: 5px;
+  padding: 10px 20px;
+`
+
+const Header = () => (
+  <HeaderBar>
+    <div>Title</div>
+    <NavLinks>
+      <NavLink>About</NavLink>
+      <NavLink>Experience</NavLink>
+      <NavLink>Work</NavLink>
+      <NavLink>Blog</NavLink>
+      <NavLink>Contact</NavLink>
+      <NavLinkButton>Resume</NavLinkButton>
+    </NavLinks>
+  </HeaderBar>
 )
 
 export default Header
