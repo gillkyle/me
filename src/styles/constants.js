@@ -15,7 +15,7 @@ export const FONT_SIZES = {
   medium: '16px',
   large: '18px',
   xlarge: '22px',
-  h3: '30px',
+  xxlarge: '30px',
 }
 
 export const FONT_WEIGHTS = {
