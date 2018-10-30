@@ -1,10 +1,10 @@
 <svg width="146" height="746" viewBox="0 0 146 746" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path opacity="0.3" d="M14.0535 333.684V299.052L-13.532 271.466" stroke="#50CAF9" stroke-width="3"/>
-<path d="M-18.4461 301.436L36.9764 356.859V483.939L18.7822 502.133V612.698L-18.4461 649.926" stroke="#5390F0" stroke-width="3"/>
-<path opacity="0.3" d="M-27.8819 306.504L27.5406 361.927V479.337L9.34639 497.531V608.096L-27.8819 645.324" stroke="#50CAF9" stroke-width="3"/>
-<path d="M21.8932 669.486V659.297L39.2906 641.9L56.688 659.297V669.486L39.2906 686.884L21.8932 669.486Z" stroke="#5390F0" stroke-width="3"/>
-<path opacity="0.3" d="M27.6754 667.793V660.99L39.2906 649.375L50.9058 660.99V667.793L39.2906 679.409L27.6754 667.793Z" stroke="#50CAF9" stroke-width="3"/>
+<path opacity="0.3" d="M14.0535 313.684V279.052L-13.532 251.466" stroke="#50CAF9" stroke-width="3"/>
+<path d="M-18.4461 281.436L36.9764 336.859V463.939L18.7822 482.133V592.698L-18.4461 629.926" stroke="#5390F0" stroke-width="3"/>
+<path opacity="0.3" d="M-27.8819 286.504L27.5406 341.927V459.337L9.34639 477.531V588.096L-27.8819 625.324" stroke="#50CAF9" stroke-width="3"/>
+<path d="M21.8932 649.486V639.297L39.2906 621.9L56.688 639.297V649.486L39.2906 666.884L21.8932 649.486Z" stroke="#5390F0" stroke-width="3"/>
+<path opacity="0.3" d="M27.6754 647.793V640.99L39.2906 629.375L50.9058 640.99V647.793L39.2906 659.408L27.6754 647.793Z" stroke="#50CAF9" stroke-width="3"/>
 <circle opacity="0.7" r="7" transform="matrix(1 0 0 -1 47.454 144.892)" fill="#50CAF9"/>
 <circle r="4.84195" transform="matrix(1 0 0 -1 26.7352 199.123)" fill="#50CAF9"/>
-<circle opacity="0.3" r="4.03496" transform="matrix(1 0 0 -1 30.7701 57.8569)" fill="#50CAF9"/>
+<circle opacity="0.3" r="4.03496" transform="matrix(1 0 0 -1 30.7701 57.8568)" fill="#50CAF9"/>
 </svg>

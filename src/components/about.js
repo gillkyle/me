@@ -9,15 +9,8 @@ import AboutMeGraphicSVG from '../images/AboutMeGraphic.svg'
 import AboutMeLeftSidebar from '../images/AboutMeLeftSidebar.svg'
 import AboutMeRightSidebar from '../images/AboutMeRightSidebar.svg'
 
-import {
-  COLORS,
-  FONT_WEIGHTS,
-  MARGIN,
-  SHADOW,
-  GRADIENT,
-  BORDER_RADIUS,
-  MEDIA_QUERIES,
-} from '../styles/constants'
+import { COLORS } from '../styles/constants'
+import { Heading } from './shared/Typography'
 
 const AboutMeContainer = styled.div`
   display: flex;
@@ -64,11 +57,7 @@ const About = () => (
     />
     <ContentContainer>
       <AboutMeContainer>
-        <AboutName>
-          <Text color="darkBlue" size="huge" weight="bold">
-            About Me
-          </Text>
-        </AboutName>
+        <Heading>About Me</Heading>
         <AboutDescription>
           <Text color="black" size="large" lineHeight={1.75}>
             Hello! I’m a software engineer that loves the junction of

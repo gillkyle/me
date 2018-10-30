@@ -1,8 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { StaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import HeroGraphic from '../images/HeroGraphic.png'
 
 import Text from './shared/Text'
 import Image from './shared/Image'
@@ -15,8 +12,6 @@ import HeroLeftSideBar from '../images/HeroLeftSideBar.svg'
 import {
   COLORS,
   FONT_WEIGHTS,
-  MARGIN,
-  GRADIENT,
   BORDER_RADIUS,
   MEDIA_QUERIES,
 } from '../styles/constants'

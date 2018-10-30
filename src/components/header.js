@@ -39,7 +39,7 @@ const NavLinkButton = styled.div`
 
 const Header = () => (
   <HeaderBar>
-    <div>Title</div>
+    <div />
     <NavLinks>
       <NavLink>About</NavLink>
       <NavLink>Experience</NavLink>
