@@ -13,3 +13,17 @@ export const Heading = props => (
     {props.children}
   </Text>
 )
+
+export const Paragraph = props => (
+  <div style={{ marginBottom: 15 }}>
+    <Text
+      color={props.inverted ? 'white' : 'black'}
+      size="large"
+      weight="normal"
+      lineHeight={1.75}
+      {...props}
+    >
+      {props.children}
+    </Text>
+  </div>
+)

@@ -3,7 +3,12 @@ import styled from 'styled-components'
 
 import Text from './shared/Text'
 import Image from './shared/Image'
-import { ContentContainer, SectionContainer } from './shared/Containers'
+import {
+  ContentContainer,
+  SectionContainer,
+  CenteredContainer,
+} from './shared/Containers'
+import { Paragraph } from './shared/Typography'
 
 import HeroGraphicSVG from '../images/HeroGraphic.svg'
 import HeroGraphicSmallSVG from '../images/HeroGraphicSmall.svg'
@@ -35,10 +40,6 @@ const IntroButton = styled.button`
   color: ${COLORS.blue};
   font-weight: ${FONT_WEIGHTS.bold};
 `
-const CenteredContainer = styled.div`
-  display: flex;
-  place-content: center;
-`
 const LargeImage = styled(Image)`
   @media (max-width: ${MEDIA_QUERIES['mobile']}px) {
     display: none;
@@ -57,7 +58,7 @@ const Hero = () => (
       style={{ position: 'absolute', left: 0 }}
       lighten
     />
-    <ContentContainer>
+    <ContentContainer numColumns={2}>
       <Intro>
         <IntroName>
           <Text color="white" size="large">
@@ -73,11 +74,11 @@ const Hero = () => (
           </Text>
         </IntroName>
         <IntroDescription>
-          <Text color="white" size="large" style={{ lineHeight: 1.75 }}>
+          <Paragraph inverted>
             I'm a software engineer specializing in developing - and often
             designing - high-quality applications and websites. I’m currently a
             Full-Stack Developer at Ravn in Pleasant Grove, Utah.
-          </Text>
+          </Paragraph>
         </IntroDescription>
         <div>
           <IntroButton>GET IN TOUCH</IntroButton>
