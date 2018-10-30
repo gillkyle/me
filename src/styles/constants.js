@@ -26,8 +26,8 @@ export const FONT_WEIGHTS = {
 }
 
 export const MARGIN = {
-  default: '60px 145px',
-  small: '20px 60px',
+  default: '60px 145px 0px 145px',
+  small: '50px 60px 0px 60px',
 }
 
 export const SHADOW =

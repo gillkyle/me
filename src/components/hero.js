@@ -6,6 +6,7 @@ import HeroGraphic from '../images/HeroGraphic.png'
 
 import Text from './shared/Text'
 import Image from './shared/Image'
+import { ContentContainer, SectionContainer } from './shared/Containers'
 
 import HeroGraphicSVG from '../images/HeroGraphic.svg'
 import HeroLeftSideBar from '../images/HeroLeftSideBar.svg'
@@ -18,26 +19,6 @@ import {
   BORDER_RADIUS,
   MEDIA_QUERIES,
 } from '../styles/constants'
-
-const HeroContainer = styled.div`
-  background: ${GRADIENT};
-  padding: ${MARGIN.default};
-  @media (max-width: ${MEDIA_QUERIES['mobile']}px) {
-    padding: ${MARGIN.small};
-  }
-`
-const ContentContainer = styled.div`
-  margin: 0 auto;
-  max-width: 960px;
-  display: grid;
-  grid-gap: 70px;
-  grid-template-columns: 1fr 1fr;
-  @media (max-width: ${MEDIA_QUERIES['mobile']}px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-  };
-`
 
 const Intro = styled.div`
   display: flex;
@@ -64,7 +45,7 @@ const CenteredContainer = styled.div`
 `
 
 const Hero = () => (
-  <HeroContainer>
+  <SectionContainer backgroundFilled>
     <Image
       src={HeroLeftSideBar}
       style={{ position: 'absolute', left: 0 }}
@@ -100,7 +81,7 @@ const Hero = () => (
         <Image src={HeroGraphicSVG} />
       </CenteredContainer>
     </ContentContainer>
-  </HeroContainer>
+  </SectionContainer>
 )
 
 export default Hero

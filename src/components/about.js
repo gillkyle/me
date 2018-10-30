@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import Text from './shared/Text'
 import Image from './shared/Image'
+import { ContentContainer, SectionContainer } from './shared/Containers'
 
 import AboutMeGraphicSVG from '../images/AboutMeGraphic.svg'
 import AboutMeLeftSidebar from '../images/AboutMeLeftSidebar.svg'
@@ -17,27 +18,6 @@ import {
   BORDER_RADIUS,
   MEDIA_QUERIES,
 } from '../styles/constants'
-
-const AboutContainer = styled.div`
-  background: ${COLORS.white};
-  min-height: 820px;
-  padding: ${MARGIN.default};
-  @media (max-width: ${MEDIA_QUERIES['mobile']}px) {
-    padding: ${MARGIN.small};
-  }
-`
-const ContentContainer = styled.div`
-  margin: 0 auto;
-  max-width: 960px;
-  display: grid;
-  grid-gap: 70px;
-  grid-template-columns: 1fr 1fr;
-  @media (max-width: ${MEDIA_QUERIES['mobile']}px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-  };
-`
 
 const AboutMeContainer = styled.div`
   display: flex;
@@ -56,7 +36,7 @@ const CenteredContainer = styled.div`
 `
 
 const About = () => (
-  <AboutContainer>
+  <SectionContainer>
     <Image
       src={AboutMeLeftSidebar}
       style={{ position: 'absolute', left: 0 }}
@@ -116,7 +96,7 @@ const About = () => (
         <Image src={AboutMeGraphicSVG} />
       </CenteredContainer>
     </ContentContainer>
-  </AboutContainer>
+  </SectionContainer>
 )
 
 export default About
