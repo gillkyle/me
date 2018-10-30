@@ -3,6 +3,7 @@ export const COLORS = {
   lightBlue: '#50CAF9',
   blue: '#5390F0',
   darkBlue: '#396CB7',
+  black: '#000000',
 }
 
 export const FONTS = {
@@ -16,6 +17,7 @@ export const FONT_SIZES = {
   large: '18px',
   xlarge: '22px',
   xxlarge: '30px',
+  huge: '48px',
 }
 
 export const FONT_WEIGHTS = {
@@ -24,7 +26,8 @@ export const FONT_WEIGHTS = {
 }
 
 export const MARGIN = {
-  default: '0px 145px',
+  default: '60px 145px',
+  small: '20px 60px',
 }
 
 export const SHADOW =
@@ -37,3 +40,7 @@ export const BORDER_RADIUS = '10px'
 export const HEADER_HEIGHT = '100px'
 
 export const GRADIENT = `linear-gradient(to bottom, #3466AE, #5390F1)`
+
+export const MEDIA_QUERIES = {
+  mobile: 850,
+}

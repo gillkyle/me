@@ -6,7 +6,7 @@ import { COLORS, FONT_SIZES, FONT_WEIGHTS } from '../../styles/constants'
 const Text = styled.span`
   color: ${({ color }) => COLORS[color] || 'currentColor'};
   font-size: ${({ size }) => FONT_SIZES[size]};
-  line-height: 1.25;
+  line-height: ${({ lineHeight }) => lineHeight};
   font-weight: ${({ weight }) => FONT_WEIGHTS[weight]};
   font-family: ${({ font }) => font};
 `
@@ -22,6 +22,7 @@ Text.propTypes = {
 Text.defaultProps = {
   size: 'medium',
   weight: 'normal',
+  lineHeight: 1.25,
 }
 
 export default Text

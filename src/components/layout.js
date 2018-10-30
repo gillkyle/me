@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import Head from './head'
 import Header from './header'
 
-import './layout.css'
+import '../styles/layout.css'
 import { MARGIN } from '../styles/constants'
 import { auto } from 'eol'
 
