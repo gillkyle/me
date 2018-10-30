@@ -12,6 +12,8 @@ const HeaderBar = styled.div`
   background: ${COLORS['white']};
   height: 100px;
   padding: ${MARGIN.default};
+  padding-top: 0px;
+  padding-bottom: 0px;
   box-shadow: ${SHADOW};
 `
 

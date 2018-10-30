@@ -27,12 +27,27 @@ const AboutMeContainer = styled.div`
 const AboutName = styled.div`
   margin-bottom: 25px;
 `
-const AboutDescription = styled.div`
-  margin-bottom: 25px;
-`
+const AboutDescription = styled.div``
 const CenteredContainer = styled.div`
   display: flex;
   place-content: center;
+`
+const UList = styled.ul`
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+  margin: 0;
+`
+const ListItem = styled.li`
+  position: relative;
+  padding-left: 25px;
+  &:before {
+    position: absolute;
+    left: 0;
+    content: '▹';
+    color: ${COLORS.blue};
+    font-weight: 700;
+  }
 `
 
 const About = () => (
@@ -74,6 +89,18 @@ const About = () => (
           <Text color="black" size="large" lineHeight={1.75}>
             Here are some things I'm experienced with:
           </Text>
+          <UList>
+            <ListItem>Javascript</ListItem>
+            <ListItem>React</ListItem>
+            <ListItem>Gatsby</ListItem>
+            <ListItem>Node</ListItem>
+            <ListItem>GraphQL</ListItem>
+            <ListItem>Ruby on Rails</ListItem>
+            <ListItem>Python</ListItem>
+            <ListItem>Git</ListItem>
+            <ListItem>Sketch</ListItem>
+            <ListItem>Figma</ListItem>
+          </UList>
         </AboutDescription>
       </AboutMeContainer>
       <CenteredContainer>

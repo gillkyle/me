@@ -9,6 +9,7 @@ import Image from './shared/Image'
 import { ContentContainer, SectionContainer } from './shared/Containers'
 
 import HeroGraphicSVG from '../images/HeroGraphic.svg'
+import HeroGraphicSmallSVG from '../images/HeroGraphicSmall.svg'
 import HeroLeftSideBar from '../images/HeroLeftSideBar.svg'
 
 import {
@@ -42,6 +43,16 @@ const IntroButton = styled.button`
 const CenteredContainer = styled.div`
   display: flex;
   place-content: center;
+`
+const LargeImage = styled(Image)`
+  @media (max-width: ${MEDIA_QUERIES['mobile']}px) {
+    display: none;
+  }
+`
+const SmallImage = styled(Image)`
+  @media (min-width: ${MEDIA_QUERIES['mobile']}px) {
+    display: none;
+  }
 `
 
 const Hero = () => (
@@ -78,7 +89,8 @@ const Hero = () => (
         </div>
       </Intro>
       <CenteredContainer>
-        <Image src={HeroGraphicSVG} />
+        <LargeImage src={HeroGraphicSVG} />
+        <SmallImage src={HeroGraphicSmallSVG} />
       </CenteredContainer>
     </ContentContainer>
   </SectionContainer>
