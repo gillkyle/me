@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="75px" height="105px" viewBox="0 0 75 105" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>SyntheticIcon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="SyntheticIcon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-59.000000, -6.000000)" id="Oval">
+            <ellipse stroke="#396CB7" stroke-width="2.4893617" cx="59" cy="58.9148936" rx="33.2394366" ry="33.1914894"></ellipse>
+            <path d="M58.9882349,106.561697 C85.4795006,106.556476 106.959145,85.0667439 106.964364,58.5630364 C106.969583,32.059329 85.4983991,10.5780614 59.0071334,10.5832823 C32.5158677,10.5885033 11.0362231,32.0782357 11.0310044,58.5819432 C11.0257857,85.0856506 32.4969691,106.566918 58.9882349,106.561697 Z" stroke="#50CAF9" stroke-width="3.31914894" opacity="0.8" stroke-linecap="round" stroke-dasharray="14.93617007311653,4.978723357705508" transform="translate(58.997684, 58.572490) rotate(75.566800) translate(-58.997684, -58.572490) "></path>
+            <path d="M58.9872094,99.2452497 C81.4428082,99.2394115 99.6513989,81.0249054 99.6572351,58.5620115 C99.6630713,36.0991177 81.4639429,17.894077 59.0083442,17.8999151 C36.5527454,17.9057532 18.3441546,36.1202594 18.3383184,58.5831532 C18.3324822,81.0460471 36.5316106,99.2510878 58.9872094,99.2452497 Z" stroke="#50CAF9" stroke-width="3.31914894" opacity="0.5" stroke-linecap="round" stroke-dasharray="9.957446715411017,4.978723357705508" transform="translate(58.997777, 58.572582) rotate(66.566800) translate(-58.997777, -58.572582) "></path>
+        </g>
+    </g>
+</svg>

@@ -5,7 +5,7 @@ import Text from './Text'
 export const Heading = props => (
   <Text
     color={props.inverted ? 'white' : 'darkBlue'}
-    size="huge"
+    size={props.size || 'huge'}
     weight="bold"
     style={{ marginBottom: 25 }}
     {...props}
@@ -15,10 +15,10 @@ export const Heading = props => (
 )
 
 export const Paragraph = props => (
-  <div style={{ marginBottom: 15 }}>
+  <div style={{ marginBottom: 15, ...props.style }}>
     <Text
       color={props.inverted ? 'white' : 'black'}
-      size="large"
+      size={props.size || 'large'}
       weight="normal"
       lineHeight={1.75}
       {...props}

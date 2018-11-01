@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="75px" height="105px" viewBox="0 0 75 105" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>MoreIcon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0.2214" y="0.45947" width="75" height="150" rx="20"></rect>
+    </defs>
+    <g id="MoreIcon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(0.000000, -25.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Rectangle"></g>
+            <g id="Group" mask="url(#mask-2)" stroke="#5390F0" stroke-linecap="round" stroke-width="10">
+                <g transform="translate(-34.000000, 37.000000)" id="Path">
+                    <path d="M20.04944,80.703 L72.8731,80.703"></path>
+                    <path d="M0.0494,60.7029 L52.8731,60.7029" opacity="0.2"></path>
+                    <path d="M10.04944,40.7029 L62.8731,40.7029" opacity="0.5"></path>
+                    <path d="M0.0494,20.7029 L52.8731,20.7029" opacity="0.2"></path>
+                    <path d="M20.04944,0.7029 L72.8731,0.7029"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

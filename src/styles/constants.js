@@ -3,7 +3,8 @@ export const COLORS = {
   lightBlue: '#50CAF9',
   blue: '#5390F0',
   darkBlue: '#396CB7',
-  black: '#000000',
+  gray: '#777',
+  black: '#494a66',
 }
 
 export const FONTS = {

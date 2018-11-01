@@ -40,6 +40,7 @@ const Image = props => (
   <ImageComponent
     src={props.src}
     className={props.lighten ? 'background-image' : ''}
+    style={{ marginBottom: 0 }}
     {...props}
   />
 )
