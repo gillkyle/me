@@ -109,7 +109,7 @@ const jobs = [
     jobTitle: 'Full Stack Developer',
     dates: 'Jan 2018 - Present',
     bullets: [
-      'Lead engineer on projects designing and developing Beynd backend/frontend including implementations of pagination, filtering, push notifications with Rails, GraphQL, React, Postgres',
+      'Lead engineer on projects designing and developing Beynd backend/frontend including implementations of pagination, filtering, and push notifications with Rails, GraphQL, React, Postgres',
       <Text>
         Developed on a team launching{' '}
         <Link target="_blank" href="https://www.beynd.com/">
