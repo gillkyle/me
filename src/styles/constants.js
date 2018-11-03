@@ -1,10 +1,14 @@
 export const COLORS = {
   white: '#FFF',
+  lightWhite: '#D4D4D4',
+  semiWhite: 'rgba(255,255,240,0.25)',
   lightBlue: '#50CAF9',
   blue: '#5390F0',
   darkBlue: '#396CB7',
   gray: '#777',
+  lightGray: '#CCC',
   black: '#494a66',
+  gold: '#ffbd0a',
 }
 
 export const FONTS = {
