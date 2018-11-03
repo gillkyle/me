@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import {
   COLORS,
   FONT_WEIGHTS,
-  BORDER_RADIUS,
+  MEDIA_QUERIES,
   SHADOW,
   TRANSITION,
 } from '../styles/constants'
@@ -28,6 +28,9 @@ const CardContainer = styled.div`
   &:hover {
     transform: scale(1.03);
     cursor: pointer;
+  }
+  @media (max-width: ${MEDIA_QUERIES['mobile']}px) {
+    grid-template-columns: 1fr 3fr;
   }
 `
 const TextContainer = styled.div`

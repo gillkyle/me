@@ -15,6 +15,7 @@ const HeaderBar = styled.div`
   padding-top: 0px;
   padding-bottom: 0px;
   box-shadow: ${SHADOW};
+  overflow-x: scroll;
 `
 
 const NavLinks = styled.div`

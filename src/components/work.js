@@ -14,7 +14,7 @@ import MoreIcon from '../images/MoreIcon.svg'
 import EmojiZooIcon from '../images/EmojiZooIcon.svg'
 
 import {
-  COLORS,
+  MEDIA_QUERIES,
   FONT_WEIGHTS,
   BORDER_RADIUS,
   SHADOW,
@@ -30,6 +30,9 @@ const CardGrid = styled.div`
   grid-template-columns: repeat(2, minmax(200px, 1fr));
   grid-gap: 70px;
   grid-template-rows: 1fr;
+  @media (max-width: ${MEDIA_QUERIES['mobile']}px) {
+    grid-template-columns: minmax(200px, 1fr);
+  }
 `
 
 const Hero = () => (
@@ -50,13 +53,13 @@ const Hero = () => (
         <ProjectCard
           icon={SyntheticIcon}
           title="Synthetic"
-          desc="A Spotify powered, data-driven, music discovery app"
+          desc="A Spotify powered, data-driven web app to discover new musics"
           link="https://synthetic.netlify.com"
         />
         <ProjectCard
           icon={CardSurgeIcon}
           title="Card Surge"
-          desc="A playground for designing beautiful cards and drop shadows for user interfaces"
+          desc="A playground for designing cards and drop shadows for user interfaces"
           link="https://card.surge.sh"
         />
         <ProjectCard

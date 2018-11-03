@@ -110,7 +110,13 @@ const jobs = [
     dates: 'Jan 2018 - Present',
     bullets: [
       'Lead engineer on projects designing and developing Beynd backend/frontend including implementations of pagination, filtering, push notifications with Rails, GraphQL, React, Postgres',
-      'Developed on a team launching Beynd.com marketing site using Gatsby, Prismic, Netlify',
+      <Text>
+        Developed on a team launching{' '}
+        <Link target="_blank" href="https://www.beynd.com/">
+          Beynd.com
+        </Link>{' '}
+        marketing site using Gatsby, Prismic, Netlify
+      </Text>,
       'Built and deployed serverless pipelines for exporting large data sets for Legasync using Rails, AWS Lambda, Node',
     ],
   },
@@ -121,12 +127,28 @@ const jobs = [
     dates: 'Feb 2018 - May 2018',
     bullets: [
       <Text>
-        Built implementation of{' '}
-        <Link href="google.com">Gatsby Plugin Library</Link> using React, Node,
-        Algolia
+        Built implementation of the{' '}
+        <Link target="_blank" href="https://www.gatsbyjs.org/plugins/">
+          Gatsby Plugin Library
+        </Link>{' '}
+        using React, Node, and Algolia
       </Text>,
-      'Wrote Gatsby e-commerce tutorial using Gatsby, Stripe, AWS Lambda',
-      "UX and design contributions to Gatsby's Site Showcase",
+      <Text>
+        Wrote{' '}
+        <Link
+          target="_blank"
+          href="https://www.gatsbyjs.org/docs/ecommerce-tutorial/"
+        >
+          Gatsby e-commerce Tutorial
+        </Link>{' '}
+        with a remote team using Gatsby, Stripe, and AWS Lambda
+      </Text>,
+      <Text>
+        Made UX and design contributions to{' '}
+        <Link target="_blank" href="https://www.gatsbyjs.org/showcase/">
+          Gatsby's Site Showcase
+        </Link>
+      </Text>,
     ],
   },
   {
@@ -136,9 +158,9 @@ const jobs = [
     jobTitle: 'Full Stack Developer',
     dates: 'Jan 2017 - Oct 2017',
     bullets: [
-      'Finished lots of things',
-      'Did lots of stuff',
-      'Made a bunch of gadgets',
+      'Rewrote sections of app frontend in React for web and mobile, significantly decreasing load times and bounce rates',
+      'Developed a custom Slack bot integration to track lead engagement and apply bonuses based on activity and performance',
+      'Contributed to an SEO friendly suite of landing pages that ranked highest among competitive keyword groups in real estate ',
     ],
   },
   {
@@ -147,9 +169,18 @@ const jobs = [
     jobTitle: 'E-learning Developer',
     dates: 'Jan 2018 - Present',
     bullets: [
-      'Finished lots of things',
-      'Did lots of stuff',
-      'Made a bunch of gadgets',
+      <Text>
+        Designed and developed{' '}
+        <Link
+          target="_blank"
+          href="http://www.ala.org/news/member-news/2017/05/brigham-young-university-s-harold-b-lee-library-recipient-lirt-2017-innovation"
+        >
+          award-winning{' '}
+        </Link>
+        instructional web tools, used by 1000+ university students and dozens of
+        professors at BYU with Javascript and the Adobe Creative Cloud
+      </Text>,
+      'Created promotional videos and graphics for first year writing classes that have 25,000+ views on YouTube with After Effects, Photoshop, and Illustrator',
     ],
   },
 ]
