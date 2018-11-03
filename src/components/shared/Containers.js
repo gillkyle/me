@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { MEDIA_QUERIES, GRADIENT, MARGIN } from '../../styles/constants'
 
 export const SectionContainer = styled.div`
+  z-index: -5;
   background: ${props => (props.backgroundFilled ? GRADIENT : 'white')};
   padding: ${MARGIN.default};
   @media (max-width: ${MEDIA_QUERIES['mobile']}px) {

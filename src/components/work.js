@@ -39,10 +39,12 @@ const Hero = () => (
       style={{ position: 'absolute', left: 0 }}
       lighten
     /> */}
-    <ContentContainer numColumns={1}>
+    <ContentContainer style={{ gridGap: 30 }} numColumns={1}>
       <Description>
         <Heading>Projects</Heading>
-        <Paragraph>Some things I've built:</Paragraph>
+        <Paragraph size="xlarge" weight="bold">
+          Some things I've built
+        </Paragraph>
       </Description>
       <CardGrid>
         <ProjectCard

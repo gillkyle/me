@@ -31,12 +31,12 @@ const About = () => (
   <SectionContainer>
     <Image
       src={AboutMeLeftSidebar}
-      style={{ position: 'absolute', left: 0 }}
+      style={{ position: 'absolute', left: 0, transform: 'translateY(-50px)' }}
       lighten
     />
     <Image
       src={AboutMeRightSidebar}
-      style={{ position: 'absolute', right: 0 }}
+      style={{ position: 'absolute', right: 0, transform: 'translateY(-50px)' }}
       lighten
     />
     <ContentContainer numColumns={2}>

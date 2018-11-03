@@ -1,6 +1,6 @@
 export const COLORS = {
   white: '#FFF',
-  lightWhite: '#D4D4D4',
+  lightWhite: '#E4E4F0',
   semiWhite: 'rgba(255,255,240,0.25)',
   lightBlue: '#50CAF9',
   blue: '#5390F0',
@@ -31,7 +31,7 @@ export const FONT_WEIGHTS = {
 }
 
 export const MARGIN = {
-  default: '60px 145px',
+  default: '120px 145px',
   small: '50px 60px',
 }
 

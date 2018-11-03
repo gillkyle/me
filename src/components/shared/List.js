@@ -5,9 +5,13 @@ export const UList = styled.ul`
   list-style: none;
   display: grid;
   grid-template-columns: ${props =>
-    `repeat(${props.columns || 2}, minmax(140px, 200px))`};
+    `repeat(${props.columns}, minmax(140px, ${560 / props.columns}px))`};
   margin: 0;
 `
+UList.defaultProps = {
+  columns: 2,
+}
+
 export const ListItem = styled.li`
   position: relative;
   padding-left: 25px;

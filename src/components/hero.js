@@ -14,6 +14,7 @@ import { Paragraph } from './shared/Typography'
 import HeroGraphicSVG from '../images/HeroGraphic.svg'
 import HeroGraphicSmallSVG from '../images/HeroGraphicSmall.svg'
 import HeroLeftSideBar from '../images/HeroLeftSideBar.svg'
+import HeroRightSideBar from '../images/HeroRightSideBar.svg'
 
 import {
   COLORS,
@@ -55,6 +56,11 @@ const Hero = () => (
     <Image
       src={HeroLeftSideBar}
       style={{ position: 'absolute', left: 0 }}
+      lighten
+    />
+    <Image
+      src={HeroRightSideBar}
+      style={{ position: 'absolute', right: 0 }}
       lighten
     />
     <ContentContainer numColumns={2}>

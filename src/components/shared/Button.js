@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { TRANSITION, COLORS, FONT_WEIGHTS } from '../../styles/constants'
 
 const Button = styled.button`
+  z-index: 2;
   color: ${COLORS.gold};
   transition: ${TRANSITION};
   padding: 10px 30px;
