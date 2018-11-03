@@ -6,6 +6,7 @@ import {
   FONT_WEIGHTS,
   BORDER_RADIUS,
   SHADOW,
+  TRANSITION,
 } from '../styles/constants'
 
 import Text from './shared/Text'
@@ -23,7 +24,7 @@ const CardContainer = styled.div`
   `};
   grid-gap: 20px;
   padding: 30px 30px 30px 0px;
-  transition: 0.3s all;
+  transition: ${TRANSITION};
   &:hover {
     transform: scale(1.03);
     cursor: pointer;

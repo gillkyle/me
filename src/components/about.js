@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import Text from './shared/Text'
 import Image from './shared/Image'
+import { UList, ListItem } from './shared/List'
 import {
   ContentContainer,
   SectionContainer,
@@ -25,24 +26,6 @@ const AboutName = styled.div`
   margin-bottom: 25px;
 `
 const AboutDescription = styled.div``
-
-const UList = styled.ul`
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(140px, 200px));
-  margin: 0;
-`
-const ListItem = styled.li`
-  position: relative;
-  padding-left: 25px;
-  &:before {
-    position: absolute;
-    left: 0;
-    content: '▹';
-    color: ${COLORS.blue};
-    font-weight: 700;
-  }
-`
 
 const About = () => (
   <SectionContainer>

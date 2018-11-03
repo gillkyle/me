@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Button from './shared/Button'
 import Text from './shared/Text'
 import Image from './shared/Image'
 import {
@@ -32,13 +33,11 @@ const IntroName = styled.div`
 const IntroDescription = styled.div`
   margin-bottom: 25px;
 `
-const IntroButton = styled.button`
+const IntroButton = styled(Button)`
   background-color: ${COLORS.white};
   border-radius: ${BORDER_RADIUS};
   padding: 20px 60px;
   letter-spacing: 2px;
-  color: ${COLORS.blue};
-  font-weight: ${FONT_WEIGHTS.bold};
 `
 const LargeImage = styled(Image)`
   @media (max-width: ${MEDIA_QUERIES['mobile']}px) {
