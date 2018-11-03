@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Text from './shared/Text'
 import Button from './shared/Button'
 import Image from './shared/Image'
+import Link from './shared/Link'
 import { UList, ListItem } from './shared/List'
 import { Heading, Paragraph } from './shared/Typography'
 import { ContentContainer, SectionContainer } from './shared/Containers'
@@ -108,9 +109,9 @@ const jobs = [
     jobTitle: 'Full Stack Developer',
     dates: 'Jan 2018 - Present',
     bullets: [
-      'Contributed to external SaaS products ',
-      'Accelerated project development by ',
-      'Made a bunch of gadgets',
+      'Lead engineer on projects designing and developing Beynd backend/frontend including implementations of pagination, filtering, push notifications with Rails, GraphQL, React, Postgres',
+      'Developed on a team launching Beynd.com marketing site using Gatsby, Prismic, Netlify',
+      'Built and deployed serverless pipelines for exporting large data sets for Legasync using Rails, AWS Lambda, Node',
     ],
   },
   {
@@ -119,9 +120,13 @@ const jobs = [
     jobTitle: 'Open Source Consultant',
     dates: 'Feb 2018 - May 2018',
     bullets: [
-      'Finished lots of things',
-      'Did lots of stuff',
-      'Made a bunch of gadgets',
+      <Text>
+        Built implementation of{' '}
+        <Link href="google.com">Gatsby Plugin Library</Link> using React, Node,
+        Algolia
+      </Text>,
+      'Wrote Gatsby e-commerce tutorial using Gatsby, Stripe, AWS Lambda',
+      "UX and design contributions to Gatsby's Site Showcase",
     ],
   },
   {

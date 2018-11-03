@@ -9,6 +9,7 @@ export const COLORS = {
   lightGray: '#CCC',
   black: '#494a66',
   gold: '#ffbd0a',
+  semiGold: 'rgba(255,189,10,0.5)',
 }
 
 export const FONTS = {
