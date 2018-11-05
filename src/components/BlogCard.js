@@ -7,6 +7,7 @@ import {
   MEDIA_QUERIES,
   SHADOW,
   TRANSITION,
+  BORDER_RADIUS,
 } from '../styles/constants'
 
 import Text from './shared/Text'
@@ -18,7 +19,7 @@ const CardContainer = styled.div`
   text-decoration: none !important;
   display: grid;
   align-items: center;
-  border-radius: 20px;
+  border-radius: ${BORDER_RADIUS.card};
   box-shadow: ${SHADOW};
   grid-template-areas: ${`
     "photo" "text"

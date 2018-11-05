@@ -11,11 +11,14 @@ import {
   MEDIA_QUERIES,
 } from '../styles/constants'
 
+import Button from './shared/Button'
+import resume from '../images/KyleGill-Resume.pdf'
+
 const HeaderBar = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   background: ${COLORS['white']};
   height: 100px;
   padding: ${MARGIN.default};
@@ -49,26 +52,40 @@ const NavLinks = styled.div`
 const NavLink = styled(AnchorLink)`
   font-weight: ${FONT_WEIGHTS.bold};
   color: ${COLORS.blue};
+  text-decoration: none;
 `
 
-const NavLinkButton = styled.div`
+const NavLinkButton = styled(Button)`
   cursor: pointer;
   background-color: ${COLORS.blue};
   color: ${COLORS.white};
   border-radius: 5px;
   padding: 10px 20px;
+  transition: ${TRANSITION};
+  &:hover {
+    background-color: ${COLORS.lightBlue};
+  }
+  &:active {
+    outline: none;
+    box-shadow: ${`0 0 0 1.5px ${COLORS.white}, 0 0 0 3px ${COLORS.blue}`};
+  }
+  &:focus {
+    outline: none;
+    box-shadow: ${`0 0 0 1.5px ${COLORS.white}, 0 0 0 3px ${COLORS.blue}`};
+  }
 `
 
 const Header = () => (
   <HeaderBar>
-    <div />
     <NavLinks>
       <NavLink href="#about">About</NavLink>
       <NavLink href="#experience">Experience</NavLink>
       <NavLink href="#projects">Work</NavLink>
-      <NavLink href="#blog">Blog</NavLink>
+      <NavLink href="#learning">Learning</NavLink>
       <NavLink href="#contact">Contact</NavLink>
-      <NavLinkButton>Resume</NavLinkButton>
+      <a href={resume} download>
+        <NavLinkButton>Resume</NavLinkButton>
+      </a>
     </NavLinks>
   </HeaderBar>
 )

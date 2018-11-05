@@ -33,7 +33,7 @@ class Learning extends React.Component {
 
   render() {
     return (
-      <SectionContainer id="blog" backgroundFilled>
+      <SectionContainer id="learning" backgroundFilled>
         <Image
           src={ExpLeftSideBar}
           style={{
@@ -54,7 +54,7 @@ class Learning extends React.Component {
         />
         <ContentContainer style={{ gridGap: 30 }}>
           <Intro>
-            <Heading inverted>Blog</Heading>
+            <Heading inverted>Learning</Heading>
             <IntroDescription>
               <Paragraph
                 size="xlarge"

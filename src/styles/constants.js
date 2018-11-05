@@ -42,7 +42,11 @@ export const SHADOW =
 export const EASING = 'cubic-bezier(0.645, 0.045, 0.355, 1)'
 export const TRANSITION = 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)'
 
-export const BORDER_RADIUS = '10px'
+export const BORDER_RADIUS = {
+  button: '10px',
+  card: '20px',
+}
+
 export const HEADER_HEIGHT = '100px'
 
 export const GRADIENT = `linear-gradient(to bottom, #3466AE, #5390F1)`

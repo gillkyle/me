@@ -69,7 +69,7 @@ const WorkButton = styled(Button)`
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  border-radius: ${BORDER_RADIUS};
+  border-radius: ${BORDER_RADIUS.button};
   transition: ${TRANSITION};
   padding: 10px 30px;
   border: none;

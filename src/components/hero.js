@@ -36,7 +36,7 @@ const IntroDescription = styled.div`
 `
 const IntroButton = styled(Button)`
   background-color: ${COLORS.white};
-  border-radius: ${BORDER_RADIUS};
+  border-radius: ${BORDER_RADIUS.button};
   padding: 20px 60px;
   letter-spacing: 2px;
 `
@@ -86,7 +86,9 @@ const Hero = () => (
           </Paragraph>
         </IntroDescription>
         <div>
-          <IntroButton>GET IN TOUCH</IntroButton>
+          <a href="mailto:kylerobertgill@gmail.com">
+            <IntroButton>GET IN TOUCH</IntroButton>
+          </a>
         </div>
       </Intro>
       <CenteredContainer>
