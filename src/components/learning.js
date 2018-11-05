@@ -67,7 +67,7 @@ class Learning extends React.Component {
               </Paragraph>
             </IntroDescription>
           </Intro>
-          <CardGrid>
+          <CardGrid mediaSize="desktop">
             <StaticQuery
               query={graphql`
                 query MediumPosts {
@@ -76,6 +76,7 @@ class Learning extends React.Component {
                       node {
                         id
                         title
+                        uniqueSlug
                         virtuals {
                           totalClapCount
                           subtitle
@@ -94,6 +95,7 @@ class Learning extends React.Component {
                     ({
                       node: {
                         title,
+                        uniqueSlug,
                         virtuals: {
                           subtitle,
                           totalClapCount,
@@ -106,6 +108,7 @@ class Learning extends React.Component {
                         subtitle={subtitle}
                         claps={totalClapCount}
                         imageUrl={imageId}
+                        link={`https://medium.com/@kyle.robert.gill/${uniqueSlug}`}
                       />
                     )
                   )}

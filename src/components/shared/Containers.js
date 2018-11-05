@@ -31,7 +31,8 @@ export const CardGrid = styled.div`
   grid-template-columns: repeat(2, minmax(200px, 1fr));
   grid-gap: 70px;
   grid-template-rows: 1fr;
-  @media (max-width: ${MEDIA_QUERIES['mobile']}px) {
-    grid-template-columns: minmax(200px, 1fr);
-  }
+  ${props =>
+    `@media (max-width: ${MEDIA_QUERIES[props.mediaSize || 'mobile']}px) {
+        grid-template-columns: minmax(200px, 1fr);
+      } `};
 `

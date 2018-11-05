@@ -48,5 +48,7 @@ export const HEADER_HEIGHT = '100px'
 export const GRADIENT = `linear-gradient(to bottom, #3466AE, #5390F1)`
 
 export const MEDIA_QUERIES = {
+  tiny: 450,
   mobile: 850,
+  desktop: 1200,
 }

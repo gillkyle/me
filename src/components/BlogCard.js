@@ -31,7 +31,10 @@ const CardContainer = styled.div`
     cursor: pointer;
   }
   @media (max-width: ${MEDIA_QUERIES['mobile']}px) {
-    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 2fr 1fr;
+  }
+  @media (max-width: ${MEDIA_QUERIES['tiny']}px) {
+    grid-template-rows: 1fr 1fr;
   }
 `
 const TextContainer = styled.div`
@@ -40,8 +43,16 @@ const TextContainer = styled.div`
   justify-content: center;
 `
 const PhotoContainer = styled.div`
+  height: 100%;
+  min-height: 120px;
+  border-radius: 5px;
   grid-area: photo;
   align-items: center;
+  background-color: ${COLORS.lightGray};
+  background-image: ${props =>
+    `url("https://cdn-images-1.medium.com/fit/c/1400/420/${props.imageUrl}")`};
+  background-size: cover;
+  background-position: center;
 `
 
 class ProjectCard extends React.Component {
@@ -51,15 +62,15 @@ class ProjectCard extends React.Component {
   }
 
   render() {
-    const { imageUrl, title, subtitle, claps } = this.props
+    const { imageUrl, title, subtitle, claps, link } = this.props
 
     return (
       <CardContainer onClick={() => this.openLink()}>
-        <PhotoContainer>
-          <Image
+        <PhotoContainer imageUrl={imageUrl}>
+          {/* <Image
             style={{ borderRadius: 5 }}
             src={`https://cdn-images-1.medium.com/fit/c/1400/420/${imageUrl}`}
-          />
+          /> */}
         </PhotoContainer>
         <TextContainer>
           <Heading

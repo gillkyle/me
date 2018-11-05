@@ -2,7 +2,13 @@ import React from 'react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import styled from 'styled-components'
 
-import { COLORS, FONT_WEIGHTS, MARGIN, SHADOW } from '../styles/constants'
+import {
+  COLORS,
+  FONT_WEIGHTS,
+  MARGIN,
+  SHADOW,
+  TRANSITION,
+} from '../styles/constants'
 
 const HeaderBar = styled.div`
   display: flex;
@@ -16,7 +22,12 @@ const HeaderBar = styled.div`
   padding-bottom: 0px;
   box-shadow: ${SHADOW};
   overflow-x: scroll;
+  transition: ${TRANSITION};
   border-top: ${COLORS.gold} 4px solid;
+  border-image: ${`linear-gradient(to left, ${COLORS.gold} 0%, ${
+    COLORS.semiGold
+  } 100%)`};
+  border-image-slice: 1;
 `
 
 const NavLinks = styled.div`
