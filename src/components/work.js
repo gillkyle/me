@@ -13,7 +13,6 @@ import ProjectCard from './ProjectCard'
 
 import CardSurgeIcon from '../images/CardSurgeIcon.svg'
 import SyntheticIcon from '../images/SyntheticIcon.svg'
-import SyntheticIconPng from '../images/SyntheticIcon.png'
 import MoreIcon from '../images/MoreIcon.svg'
 import EmojiZooIcon from '../images/EmojiZooIcon.svg'
 

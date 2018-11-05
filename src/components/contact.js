@@ -10,12 +10,6 @@ import {
   CardGrid,
 } from './shared/Containers'
 
-import CardSurgeIcon from '../images/CardSurgeIcon.svg'
-import SyntheticIcon from '../images/SyntheticIcon.svg'
-import SyntheticIconPng from '../images/SyntheticIcon.png'
-import MoreIcon from '../images/MoreIcon.svg'
-import EmojiZooIcon from '../images/EmojiZooIcon.svg'
-
 import {
   MEDIA_QUERIES,
   FONT_WEIGHTS,
