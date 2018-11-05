@@ -22,8 +22,16 @@ grid-template-columns: ${props => `repeat(${props.numColumns}, 1fr)`};
   }
   };
 `
-
 export const CenteredContainer = styled.div`
   display: flex;
   place-content: center;
+`
+export const CardGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  grid-gap: 70px;
+  grid-template-rows: 1fr;
+  @media (max-width: ${MEDIA_QUERIES['mobile']}px) {
+    grid-template-columns: minmax(200px, 1fr);
+  }
 `

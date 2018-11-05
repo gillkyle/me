@@ -25,6 +25,13 @@ module.exports = {
         icon: 'src/images/gatsby-icon.png',
       },
     },
+    {
+      resolve: `gatsby-source-medium`,
+      options: {
+        username: `@kyle.robert.gill`,
+        limit: 200,
+      },
+    },
     'gatsby-plugin-offline',
   ],
 }

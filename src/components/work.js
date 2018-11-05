@@ -4,7 +4,11 @@ import styled from 'styled-components'
 import Text from './shared/Text'
 import Image from './shared/Image'
 import { Heading, Paragraph } from './shared/Typography'
-import { SectionContainer, ContentContainer } from './shared/Containers'
+import {
+  SectionContainer,
+  ContentContainer,
+  CardGrid,
+} from './shared/Containers'
 import ProjectCard from './ProjectCard'
 
 import CardSurgeIcon from '../images/CardSurgeIcon.svg'
@@ -24,15 +28,6 @@ const Description = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-`
-const CardGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, minmax(200px, 1fr));
-  grid-gap: 70px;
-  grid-template-rows: 1fr;
-  @media (max-width: ${MEDIA_QUERIES['mobile']}px) {
-    grid-template-columns: minmax(200px, 1fr);
-  }
 `
 
 const Hero = () => (
