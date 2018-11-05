@@ -8,6 +8,7 @@ export const Heading = props => (
     size={props.size || 'huge'}
     weight="bold"
     style={{ marginBottom: 25 }}
+    href={props.href}
     {...props}
   >
     {props.children}

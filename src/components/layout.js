@@ -6,8 +6,6 @@ import Head from './head'
 import Header from './header'
 
 import '../styles/layout.css'
-import { MARGIN } from '../styles/constants'
-import { auto } from 'eol'
 
 const Layout = ({ children, location }) => (
   <StaticQuery
@@ -24,16 +22,7 @@ const Layout = ({ children, location }) => (
       <>
         <Head metaData={site.siteMetadata} />
         <Header location={location} siteTitle={site.siteMetadata.title} />
-        {/* <div
-          style={{
-            margin: '0 auto',
-            maxWidth: 960,
-            padding: MARGIN.default,
-            paddingTop: 0,
-          }}
-        > */}
         {children}
-        {/* </div> */}
       </>
     )}
   />

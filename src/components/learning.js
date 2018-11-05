@@ -33,7 +33,7 @@ class Learning extends React.Component {
 
   render() {
     return (
-      <SectionContainer backgroundFilled>
+      <SectionContainer id="blog" backgroundFilled>
         <Image
           src={ExpLeftSideBar}
           style={{

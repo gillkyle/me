@@ -8,6 +8,7 @@ import {
   MARGIN,
   SHADOW,
   TRANSITION,
+  MEDIA_QUERIES,
 } from '../styles/constants'
 
 const HeaderBar = styled.div`
@@ -28,6 +29,11 @@ const HeaderBar = styled.div`
     COLORS.semiGold
   } 100%)`};
   border-image-slice: 1;
+  @media (max-width: ${MEDIA_QUERIES['mobile']}px) {
+    padding: ${MARGIN.small};
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
 `
 
 const NavLinks = styled.div`
@@ -35,6 +41,9 @@ const NavLinks = styled.div`
   grid-gap: 45px;
   grid-template-columns: repeat(6, auto);
   align-items: center;
+  @media (max-width: ${MEDIA_QUERIES['mobile']}px) {
+    padding-right: 60px;
+  }
 `
 
 const NavLink = styled(AnchorLink)`
@@ -54,11 +63,11 @@ const Header = () => (
   <HeaderBar>
     <div />
     <NavLinks>
-      <NavLink>About</NavLink>
-      <NavLink>Experience</NavLink>
-      <NavLink>Work</NavLink>
-      <NavLink>Blog</NavLink>
-      <NavLink>Contact</NavLink>
+      <NavLink href="#about">About</NavLink>
+      <NavLink href="#experience">Experience</NavLink>
+      <NavLink href="#projects">Work</NavLink>
+      <NavLink href="#blog">Blog</NavLink>
+      <NavLink href="#contact">Contact</NavLink>
       <NavLinkButton>Resume</NavLinkButton>
     </NavLinks>
   </HeaderBar>

@@ -197,7 +197,7 @@ class Experience extends React.Component {
     const { selectedIndex } = this.state
     const selectedJob = jobs[selectedIndex] || jobs[0]
     return (
-      <SectionContainer backgroundFilled>
+      <SectionContainer id="experience" backgroundFilled>
         <Image
           src={ExpLeftSideBar}
           style={{

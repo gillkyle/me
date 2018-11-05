@@ -28,7 +28,7 @@ const AboutName = styled.div`
 const AboutDescription = styled.div``
 
 const About = () => (
-  <SectionContainer>
+  <SectionContainer id="about">
     <Image
       src={AboutMeLeftSidebar}
       style={{ position: 'absolute', left: 0, transform: 'translateY(-50px)' }}
