@@ -11,13 +11,16 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'Kyle Gill | Developer & Designer',
+        short_name: 'Kyle Gill',
         start_url: '/',
         background_color: '#E6F1FF',
         theme_color: '#5390F0',
@@ -32,6 +35,5 @@ module.exports = {
         limit: 200,
       },
     },
-    'gatsby-plugin-offline',
   ],
 }
