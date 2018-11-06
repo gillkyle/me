@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Text from './shared/Text'
 import Image from './shared/Image'
 import { UList, ListItem } from './shared/List'
 import {
@@ -11,10 +10,9 @@ import {
 } from './shared/Containers'
 
 import AboutMeGraphicSVG from '../images/AboutMeGraphic.svg'
-import AboutMeLeftSidebar from '../images/AboutMeLeftSidebar.svg'
-import AboutMeRightSidebar from '../images/AboutMeRightSidebar.svg'
+import AboutMeLeftSideBar from '../images/AboutMeLeftSideBar.svg'
+import AboutMeRightSideBar from '../images/AboutMeRightSideBar.svg'
 
-import { COLORS } from '../styles/constants'
 import { Heading, Paragraph } from './shared/Typography'
 
 const AboutMeContainer = styled.div`
@@ -30,12 +28,12 @@ const AboutDescription = styled.div``
 const About = () => (
   <SectionContainer id="about">
     <Image
-      src={AboutMeLeftSidebar}
+      src={AboutMeLeftSideBar}
       style={{ position: 'absolute', left: 0, transform: 'translateY(-50px)' }}
       lighten
     />
     <Image
-      src={AboutMeRightSidebar}
+      src={AboutMeRightSideBar}
       style={{ position: 'absolute', right: 0, transform: 'translateY(-50px)' }}
       lighten
     />
