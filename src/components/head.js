@@ -22,3 +22,4 @@ const Head = ({ metaData }) => (
 )
 
 export default Head
+ 

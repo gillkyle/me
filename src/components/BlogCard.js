@@ -3,15 +3,12 @@ import styled from 'styled-components'
 
 import {
   COLORS,
-  FONT_WEIGHTS,
   MEDIA_QUERIES,
   SHADOW,
   TRANSITION,
   BORDER_RADIUS,
 } from '../styles/constants'
 
-import Text from './shared/Text'
-import Image from './shared/Image'
 import { Heading, Paragraph } from './shared/Typography'
 
 const CardContainer = styled.div`
@@ -67,12 +64,7 @@ class ProjectCard extends React.Component {
 
     return (
       <CardContainer onClick={() => this.openLink()}>
-        <PhotoContainer imageUrl={imageUrl}>
-          {/* <Image
-            style={{ borderRadius: 5 }}
-            src={`https://cdn-images-1.medium.com/fit/c/1400/420/${imageUrl}`}
-          /> */}
-        </PhotoContainer>
+        <PhotoContainer imageUrl={imageUrl} />
         <TextContainer>
           <Heading
             color="black"
