@@ -40,9 +40,8 @@ const About = () => (
         <AboutDescription>
           <Paragraph>
             Hello! I’m a software engineer that loves the junction of
-            engineering and design. I build experiences with pixel perfect
-            attention to detail that comes through clean code and a solid
-            architecture.
+            engineering and design. I build experiences with exact attention to
+            detail that comes through clean code and solid architecture.
           </Paragraph>
           <Paragraph>
             I’m graduating from Brigham Young University with a Master’s Degree
@@ -59,7 +58,7 @@ const About = () => (
             <ListItem>GraphQL</ListItem>
             <ListItem>Ruby on Rails</ListItem>
             <ListItem>Python</ListItem>
-            <ListItem>Git</ListItem>
+            <ListItem>Swift</ListItem>
             <ListItem>Sketch</ListItem>
             <ListItem>Figma</ListItem>
           </UList>

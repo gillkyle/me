@@ -106,7 +106,7 @@ class Learning extends React.Component {
                       <BlogCard
                         title={title}
                         subtitle={subtitle}
-                        claps={totalClapCount}
+                        claps={totalClapCount > 50 ? totalClapCount : '<50'}
                         imageUrl={imageId}
                         link={`https://medium.com/@kyle.robert.gill/${uniqueSlug}`}
                       />

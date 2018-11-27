@@ -36,6 +36,8 @@ const HeaderBar = styled.div`
     padding: ${MARGIN.small};
     padding-top: 0px;
     padding-bottom: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 `
 
@@ -45,7 +47,7 @@ const NavLinks = styled.div`
   grid-template-columns: repeat(6, auto);
   align-items: center;
   @media (max-width: ${MEDIA_QUERIES['mobile']}px) {
-    padding-right: 60px;
+    overflow-x: scroll;
   }
 `
 
