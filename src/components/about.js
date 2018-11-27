@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Image from './shared/Image'
+import GatsbyImage from './shared/GatsbyImage'
 import { UList, ListItem } from './shared/List'
 import {
   ContentContainer,
@@ -66,7 +67,8 @@ const About = () => (
         </AboutDescription>
       </AboutMeContainer>
       <CenteredContainer>
-        <Image src={AboutMeGraphicSVG} />
+        <GatsbyImage style={{ height: '100%', width: '100%' }} />
+        {/* <Image src={AboutMeGraphicSVG} /> */}
       </CenteredContainer>
     </ContentContainer>
   </SectionContainer>

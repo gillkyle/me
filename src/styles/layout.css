@@ -449,3 +449,7 @@ code {
     font-size: 100%;
   }
 }
+picture > img,
+.gatsby-image-wrapper > img {
+  object-fit: contain !important;
+}
