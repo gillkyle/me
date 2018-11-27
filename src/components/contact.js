@@ -8,6 +8,13 @@ import { SectionContainer, ContentContainer } from './shared/Containers'
 import { BORDER_RADIUS, SHADOW, TRANSITION, COLORS } from '../styles/constants'
 import Link from './shared/Link'
 
+import MediumLogo from '../images/logos/medium.png'
+import GithubLogo from '../images/logos/github.png'
+import DribbbleLogo from '../images/logos/dribbble.png'
+import LinkedinLogo from '../images/logos/linkedin.png'
+import TwitterLogo from '../images/logos/twitter.png'
+import ProducthuntLogo from '../images/logos/producthunt.png'
+
 const Description = styled.div`
   display: flex;
   justify-content: center;
@@ -40,14 +47,14 @@ const ContactCardImage = styled(Image)`
 `
 
 const contactLinks = [
-  { profile: 'https://medium.com/@kyle.robert.gill', domain: 'medium.com' },
-  { profile: 'https://github.com/gillkyle', domain: 'github.com' },
-  { profile: 'https://www.linkedin.com/in/kyle-gill/', domain: 'linkedin.com' },
-  { profile: 'https://dribbble.com/kylegill', domain: 'dribbble.com' },
-  { profile: 'https://twitter.com/gill_kyle', domain: 'twitter.com' },
+  { profile: 'https://medium.com/@kyle.robert.gill', logo: MediumLogo },
+  { profile: 'https://github.com/gillkyle', logo: GithubLogo },
+  { profile: 'https://www.linkedin.com/in/kyle-gill/', logo: LinkedinLogo },
+  { profile: 'https://dribbble.com/kylegill', logo: DribbbleLogo },
+  { profile: 'https://twitter.com/gill_kyle', logo: TwitterLogo },
   {
     profile: 'https://www.producthunt.com/@gill_kyle',
-    domain: 'producthunt.com',
+    logo: ProducthuntLogo,
   },
 ]
 
@@ -83,9 +90,7 @@ class Contact extends React.Component {
           <ContactCards>
             {contactLinks.map(node => (
               <ContactCard onClick={() => this.openLink(node.profile)}>
-                <ContactCardImage
-                  src={`//logo.clearbit.com/${node.domain}?greyscale=true`}
-                />
+                <ContactCardImage src={node.logo} />
               </ContactCard>
             ))}
           </ContactCards>
