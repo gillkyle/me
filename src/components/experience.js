@@ -190,8 +190,7 @@ class Experience extends React.Component {
     selectedIndex: null,
   }
 
-  onSelectJob = selectedIndex =>
-    console.log(selectedIndex) || this.setState({ selectedIndex })
+  onSelectJob = selectedIndex => this.setState({ selectedIndex })
 
   render() {
     const { selectedIndex } = this.state
