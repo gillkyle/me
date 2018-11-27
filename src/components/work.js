@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Text from './shared/Text'
-import Image from './shared/Image'
 import { Heading, Paragraph } from './shared/Typography'
 import {
   SectionContainer,
@@ -15,13 +13,6 @@ import CardSurgeIcon from '../images/CardSurgeIcon.svg'
 import SyntheticIcon from '../images/SyntheticIcon.svg'
 import MoreIcon from '../images/MoreIcon.svg'
 import EmojiZooIcon from '../images/EmojiZooIcon.svg'
-
-import {
-  MEDIA_QUERIES,
-  FONT_WEIGHTS,
-  BORDER_RADIUS,
-  SHADOW,
-} from '../styles/constants'
 
 const Description = styled.div`
   display: flex;

@@ -16,12 +16,7 @@ import HeroGraphicSmallSVG from '../images/HeroGraphicSmall.svg'
 import HeroLeftSideBar from '../images/HeroLeftSideBar.svg'
 import HeroRightSideBar from '../images/HeroRightSideBar.svg'
 
-import {
-  COLORS,
-  FONT_WEIGHTS,
-  BORDER_RADIUS,
-  MEDIA_QUERIES,
-} from '../styles/constants'
+import { COLORS, BORDER_RADIUS, MEDIA_QUERIES } from '../styles/constants'
 
 const Intro = styled.div`
   display: flex;

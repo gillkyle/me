@@ -1,23 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Text from './shared/Text'
 import Image from './shared/Image'
 import { Heading, Paragraph } from './shared/Typography'
-import {
-  SectionContainer,
-  ContentContainer,
-  CardGrid,
-} from './shared/Containers'
+import { SectionContainer, ContentContainer } from './shared/Containers'
 
-import {
-  MEDIA_QUERIES,
-  FONT_WEIGHTS,
-  BORDER_RADIUS,
-  SHADOW,
-  TRANSITION,
-  COLORS,
-} from '../styles/constants'
+import { BORDER_RADIUS, SHADOW, TRANSITION, COLORS } from '../styles/constants'
 import Link from './shared/Link'
 
 const Description = styled.div`

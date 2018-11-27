@@ -60,7 +60,7 @@ class ProjectCard extends React.Component {
   }
 
   render() {
-    const { imageUrl, title, subtitle, claps, link } = this.props
+    const { imageUrl, title, subtitle, claps } = this.props
 
     return (
       <CardContainer onClick={() => this.openLink()}>

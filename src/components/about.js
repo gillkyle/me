@@ -20,9 +20,6 @@ const AboutMeContainer = styled.div`
   justify-content: center;
   flex-direction: column;
 `
-const AboutName = styled.div`
-  margin-bottom: 25px;
-`
 const AboutDescription = styled.div``
 
 const About = () => (

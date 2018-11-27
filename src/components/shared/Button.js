@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import { TRANSITION, COLORS, FONT_WEIGHTS } from '../../styles/constants'
 
