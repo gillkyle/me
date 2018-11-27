@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Image from './shared/Image'
 import { Heading, Paragraph } from './shared/Typography'
 import {
   SectionContainer,
@@ -8,6 +9,9 @@ import {
   CardGrid,
 } from './shared/Containers'
 import ProjectCard from './ProjectCard'
+
+import WorkRightSideBarSVG from '../images/WorkRightSideBar.svg'
+import WorkLeftSideBarSVG from '../images/WorkLeftSideBar.svg'
 
 import CardSurgeIcon from '../images/CardSurgeIcon.svg'
 import SyntheticIcon from '../images/SyntheticIcon.svg'
@@ -22,11 +26,16 @@ const Description = styled.div`
 
 const Hero = () => (
   <SectionContainer id="projects">
-    {/* <Image
-      src={HeroLeftSideBar}
+    <Image
+      src={WorkLeftSideBarSVG}
       style={{ position: 'absolute', left: 0 }}
       lighten
-    /> */}
+    />
+    <Image
+      src={WorkRightSideBarSVG}
+      style={{ position: 'absolute', right: 0 }}
+      lighten
+    />
     <ContentContainer style={{ gridGap: 30 }} numColumns={1}>
       <Description>
         <Heading>Projects</Heading>
