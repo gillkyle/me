@@ -12,6 +12,11 @@ import { ContentContainer, SectionContainer } from './shared/Containers'
 import ExpLeftSideBar from '../images/ExpLeftSideBar.svg'
 import ExpRightSideBar from '../images/ExpRightSideBar.svg'
 
+import BrixioLogo from '../images/logos/brixio.png'
+import RavnLogo from '../images/logos/ravn.png'
+import GatsbyLogo from '../images/logos/gatsby.png'
+import ByuLogo from '../images/logos/byu.png'
+
 import {
   COLORS,
   MEDIA_QUERIES,
@@ -105,7 +110,7 @@ const RoundedImageContainer = styled.div`
 const jobs = [
   {
     company: 'Ravn',
-    logo: '//logo.clearbit.com/ravndev.com',
+    logo: RavnLogo,
     jobTitle: 'Full Stack Developer',
     dates: 'Jan 2018 - Present',
     bullets: [
@@ -122,7 +127,7 @@ const jobs = [
   },
   {
     company: 'Gatsby',
-    logo: '//logo.clearbit.com/gatsbyjs.com',
+    logo: GatsbyLogo,
     jobTitle: 'Open Source Consultant',
     dates: 'Feb 2018 - May 2018',
     bullets: [
@@ -153,8 +158,7 @@ const jobs = [
   },
   {
     company: 'Brixio',
-    logo:
-      'https://media.licdn.com/dms/image/C4E0BAQEx4NRUJfczHw/company-logo_200_200/0?e=1549497600&v=beta&t=V0rOw5u8o_Y7nz_py1yCUi8hay9KFTk8bAIb4WP0Nvg',
+    logo: BrixioLogo,
     jobTitle: 'Full Stack Developer',
     dates: 'Jan 2017 - Oct 2017',
     bullets: [
@@ -165,7 +169,7 @@ const jobs = [
   },
   {
     company: 'BYU',
-    logo: '//logo.clearbit.com/byu.com',
+    logo: ByuLogo,
     jobTitle: 'E-learning Developer',
     dates: 'Jan 2018 - Present',
     bullets: [

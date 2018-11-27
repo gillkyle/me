@@ -183,7 +183,7 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em georgia, serif;
+  font: 112.5%/1.45em sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -198,7 +198,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: Lato, georgia, serif;
+  font-family: Lato, sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
