@@ -38,5 +38,13 @@ module.exports = {
         limit: 200,
       },
     },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Lato'],
+        },
+      },
+    },
   ],
 }

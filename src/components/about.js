@@ -10,7 +10,6 @@ import {
   CenteredContainer,
 } from './shared/Containers'
 
-import AboutMeGraphicSVG from '../images/AboutMeGraphic.svg'
 import AboutMeLeftSideBar from '../images/AboutMeLeftSideBar.svg'
 import AboutMeRightSideBar from '../images/AboutMeRightSideBar.svg'
 
@@ -68,7 +67,6 @@ const About = () => (
       </AboutMeContainer>
       <CenteredContainer>
         <GatsbyImage style={{ height: '100%', width: '100%' }} />
-        {/* <Image src={AboutMeGraphicSVG} /> */}
       </CenteredContainer>
     </ContentContainer>
   </SectionContainer>
