@@ -16,7 +16,7 @@ import WorkLeftSideBarSVG from '../images/WorkLeftSideBar.svg'
 import CardSurgeIcon from '../images/CardSurgeIcon.svg'
 import SyntheticIcon from '../images/SyntheticIcon.svg'
 import MoreIcon from '../images/MoreIcon.svg'
-import EmojiZooIcon from '../images/EmojiZooIcon.svg'
+import SolJournalIcon from '../images/SolJournalIcon.svg'
 
 const Description = styled.div`
   display: flex;
@@ -49,23 +49,26 @@ const Hero = () => (
           title="Synthetic"
           desc="A Spotify powered, data-driven web app to discover new musics"
           link="https://synthetic.netlify.com"
+          repoName="synthetic"
         />
         <ProjectCard
           icon={CardSurgeIcon}
           title="Card Surge"
           desc="A playground for designing cards and drop shadows for user interfaces"
           link="https://card.surge.sh"
+          repoName="card-surge"
         />
         <ProjectCard
-          icon={EmojiZooIcon}
-          title="Emoji Zoo"
-          desc="A Twitter bot sending out daily zoo scenes made of Ascii art and emojis "
-          link="https://twitter.com/EmojiZoo_"
+          icon={SolJournalIcon}
+          title="Sol Journal"
+          desc="An open source, offline, personal journaling platform"
+          link="https://sol-journal.firebaseapp.com"
+          repoName="sol-journal"
         />
         <ProjectCard
           icon={MoreIcon}
           title="More"
-          desc="I’ve made all sorts of apps, bots, and microservices that live on my Github"
+          desc="I’ve made all sorts of apps, bots, and side projects that live on my Github"
           link="https://github.com/gillkyle"
         />
       </CardGrid>

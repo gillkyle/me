@@ -77,7 +77,7 @@ const Hero = () => (
           <Paragraph inverted>
             I'm a software engineer specializing in developing - and often
             designing - high-quality applications and websites. I’m currently a
-            Full-Stack Developer at Ravn in Pleasant Grove, Utah.
+            Software Engineer Intern at Gatsby.
           </Paragraph>
         </IntroDescription>
         <div>

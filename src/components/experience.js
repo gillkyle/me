@@ -109,27 +109,10 @@ const RoundedImageContainer = styled.div`
 
 const jobs = [
   {
-    company: 'Ravn',
-    logo: RavnLogo,
-    jobTitle: 'Full Stack Developer',
-    dates: 'Jan 2018 - Present',
-    bullets: [
-      'Lead engineer on projects designing and developing Beynd backend/frontend including implementations of pagination, filtering, and push notifications with Rails, GraphQL, React, Postgres',
-      <Text>
-        Developed on a team launching{' '}
-        <Link target="_blank" href="https://www.beynd.com/">
-          Beynd.com
-        </Link>{' '}
-        marketing site using Gatsby, Prismic, Netlify
-      </Text>,
-      'Built and deployed serverless pipelines for exporting large data sets for Legasync using Rails, AWS Lambda, Node',
-    ],
-  },
-  {
     company: 'Gatsby',
     logo: GatsbyLogo,
-    jobTitle: 'Open Source Consultant',
-    dates: 'Feb 2018 - May 2018',
+    jobTitle: 'Software Engineer Intern',
+    dates: 'May 2019 - Present',
     bullets: [
       <Text>
         Built implementation of the{' '}
@@ -154,6 +137,23 @@ const jobs = [
           Gatsby's Site Showcase
         </Link>
       </Text>,
+    ],
+  },
+  {
+    company: 'Ravn',
+    logo: RavnLogo,
+    jobTitle: 'Full Stack Developer',
+    dates: 'Jan 2018 - March 2019',
+    bullets: [
+      'Lead engineer on projects designing and developing Beynd backend/frontend including implementations of pagination, filtering, and push notifications with Rails, GraphQL, React, Postgres',
+      <Text>
+        Developed on a team launching{' '}
+        <Link target="_blank" href="https://www.beynd.com/">
+          Beynd.com
+        </Link>{' '}
+        marketing site using Gatsby, Prismic, Netlify
+      </Text>,
+      'Built and deployed serverless pipelines for exporting large data sets for Legasync using Rails, AWS Lambda, Node',
     ],
   },
   {
