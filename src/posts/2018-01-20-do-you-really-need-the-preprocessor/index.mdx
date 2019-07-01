@@ -1,0 +1,74 @@
+---
+title: Do you Really Need the Preprocessor? Use CSS Variables Instead
+description: >-
+  If you’re like me, you jump through a lot of hoops to get Sass or Less to
+  cooperate with a project, just to make it easier to add some…
+date: '2018-01-20T23:10:43.903Z'
+categories: []
+keywords: []
+slug: >-
+  /do-you-really-need-the-preprocessor
+---
+
+![](https://cdn-images-1.medium.com/max/1200/1*dgBBkS30z_JIBOpOoPAqsg.jpeg)
+
+If you’re like me, you jump through a lot of hoops to get Sass or Less to cooperate with a project, just to make it easier to add some variable colors and expressions to the styles throughout your codebase.
+
+A new feature of native CSS called Custom Properties can create reusable properties across stylesheets for you, without needing the preprocessor 🙌 In order to use them, prepend a `--` to the front of the variable name of your custom property and define it like normal:
+
+:root {  
+ --primary-theme-color: #FDAB37; /\* orange \*/  
+ --secondary-theme-color: #4275B0; /\* blue \*/  
+ --thickness: 5px;  
+ --size: 125px;  
+ --border-radius-squareness: 1; /\* a factor for scaling #'s \*/  
+}
+
+Then access your custom properties using the var() function:
+
+.primary {  
+ color: **var(--primary-theme-color)**; /\* #FDAB37 \*/  
+}  
+.secondary {  
+ color: **var(--secondary-theme-color)**; /\* #4275B0 \*/  
+}
+
+You can use them like normal in other use cases like with the calc() function, or include them as a fragment of another attribute:
+
+button {  
+ width: calc(**var(--size)\*3**);  
+ border-radius: calc(**var(--size)**/**var(--border-radius-squareness)**);  
+ border: **var(--thickness)** solid rgba(255,250,255,0.5);  
+}
+
+Using the native CSS also offers some unique advantages compared to Sass or Less variables:
+
+#### You can programmatically alter and manipulate your variables at run time with Javascript
+
+Being able to change the variable values at run time means you can create a theming system with little effort. Assign colors based on variables you define from the start and update them with Javascript to see changes take effect across your whole page.
+
+#### They cascade like other styles in CSS, ie you can define a custom property early in your file and override it later
+
+Cascading styles means you can define custom properties and then in certain cases change them to match a more specific subset of styles, like with a media query. If you want your mobile view to have smaller margins, you can define one `--margin` property that can be used for all margins, and is then overridden depending on the viewpoint.
+
+#### You don’t have to deal with all the issues that can be introduced by configuring a preprocessor
+
+This tweet by [Dan Abramov](https://medium.com/u/a3a8af6addc1) generated some good discussion and brought up some good points on both sides of the why’s for preprocessors:
+
+But as the tweet brings up, you can introduce other issues by adding another dependency to your project.
+
+Check out this demo combining these ideas, demonstrating them with Custom Properties:
+
+adjust the sliders to see the effect
+
+If most of your usage of a preprocessor is variables, or you can live without the other fancy mix-ins and functions available in a CSS preprocessor, leave it aside. There are powerful features of a preprocessor that can save a lot of time and simplify the styles of someone that knows the in’s and out’s, but if you haven’t ever delved into something like Less or Sass, sticking to the native CSS features could be enough to get the job done.
+
+CSS custom properties are available in ([almost](https://caniuse.com/#feat=css-variables)) all browsers, so don’t wait to take advantage of them. It could save you a lot of headache!
+
+### Thanks for reading!…
+
+If you found this interesting, leave a clap or two, subscribe for future updates, tweet me your thoughts, or retweet/share this tweet: 😊
+
+[![](https://cdn-images-1.medium.com/max/1200/1*i3hPOj27LTt0ZPn5TQuhZg.png)](http://bit.ly/codeburst)
+
+> ✉️ _Subscribe to_ CodeBurst’s _once-weekly_ [**_Email Blast_**](http://bit.ly/codeburst-email)**_,_** 🐦 _Follow_ CodeBurst _on_ [**_Twitter_**](http://bit.ly/codeburst-twitter)_, view_ 🗺️ [**_The 2018 Web Developer Roadmap_**](http://bit.ly/2018-web-dev-roadmap)_, and_ 🕸️ [**_Learn Full Stack Web Development_**](http://bit.ly/learn-web-dev-codeburst)_._
