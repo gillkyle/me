@@ -3,11 +3,28 @@ module.exports = {
     title: 'Kyle Gill | Developer & Designer',
   },
   plugins: [
-    'gatsby-plugin-mdx',
+    'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-favicon',
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 786,
+              backgroundColor: `#ffffff`,
+            },
+          },
+          `gatsby-remark-code-titles`,
+          `gatsby-remark-autolink-headers`,
+          `gatsby-remark-prismjs`,
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -20,12 +37,6 @@ module.exports = {
       options: {
         name: `posts`,
         path: `${__dirname}/src/posts`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-styled-components`,
-      options: {
-        ssr: true,
       },
     },
     {

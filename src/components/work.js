@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 import Image from './shared/Image'
 import { Heading, Paragraph } from './shared/Typography'

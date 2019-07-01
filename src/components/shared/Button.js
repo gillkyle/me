@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { TRANSITION, COLORS, FONT_WEIGHTS } from '../../styles/constants'
 
 const Button = styled.button`

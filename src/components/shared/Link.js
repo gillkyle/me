@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { COLORS, TRANSITION, FONT_WEIGHTS } from '../../styles/constants'
 
 const Link = styled.a`
