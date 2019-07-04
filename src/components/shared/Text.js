@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 import { COLORS, FONT_SIZES, FONT_WEIGHTS } from '../../styles/constants'
 

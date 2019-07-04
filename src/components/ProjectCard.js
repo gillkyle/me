@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import Github from 'react-feather/dist/icons/github'
 import Star from 'react-feather/dist/icons/star'
 

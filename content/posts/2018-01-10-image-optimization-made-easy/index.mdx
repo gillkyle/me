@@ -1,0 +1,215 @@
+---
+title: Image Optimization Made Easy with Gatsby.js
+description: >-
+  Shave off hours of work with a simple to use React component built for images.
+  Optimizing images hardly sounds like an ideal afternoon of…
+date: '2018-01-10T22:04:46.323Z'
+categories: []
+keywords: []
+slug: /image-optimization-made-easy-with-gatsby
+---
+
+Shave off hours of work with a simple to use React component built for images. Optimizing images hardly sounds like an ideal afternoon of work, but in today’s world it’s become a necessary evil. This post looks at how it can be done _much_ easier using gatsby-image.
+
+Taking the time to crop down all your photos to different sizes, tinker with color depth and compression on your PNGs and JPEGs, write media queries for all the different sizes, or even add in lazy-loading of images can be time consuming and arduously dull. On the flip side, the results of image optimization can mean a much faster site, smaller request sizes on mobile devices, and overall happier users.
+
+> “…optimizing images can often yield some of the largest byte savings and performance improvements”
+
+> _―_ Google PageSpeed docs
+
+Enter [gatsby-image](https://www.gatsbyjs.org/packages/gatsby-image/)! A React component designed for [Gatsby.js](https://www.gatsbyjs.org/) as an easy way to add advanced image optimization to your site without having to jump through all the hoops.
+
+### Example
+
+![a normal header image loading without any optimization](https://cdn-images-1.medium.com/max/800/1*kX1zRPTU8DOitKuEKQEo2A.gif)
+a normal header image loading without any optimization![a gatsby-image component that “blurs up” to an optimized size](https://cdn-images-1.medium.com/max/800/1*Aajedw5QNRRcKJ7k1ZosFA.gif)
+a gatsby-image component that “blurs up” to an optimized size
+
+A higher resolution image often loads somewhat like the first example, revealing an ugly background and expending precious milliseconds of load time.
+
+Lazy-loading images or loading smaller-sized placeholders has become a standard way of improving the overall UX of a site. Facebook began using it as a technique to fix the jarring, jittery problem of a solid background suddenly transforming into an image. Medium also uses blurred images to preserve the layout of the site so that images don’t bump text or other DOM elements farther down the page as the images load.
+
+### Use Case
+
+While building out a demo restaurant site in Gatsby, I ran into some performance issues that almost all stemmed from some oversized images from [Unsplash](https://unsplash.com/). I didn’t really need a 4000x6000 JPEG filling the hero section of my screen, but my `<img>` tags would argue otherwise. Running a Lighthouse Performance audit in the Chrome Developer Tools scored my site at a sluggish 32 out of 100.
+
+![the mediocre results of the performance audit on my site](https://cdn-images-1.medium.com/max/800/1*862xZ5CMGDuAS97KkPtX-Q.png)
+the mediocre results of the performance audit on my site
+
+One of Gatsby’s biggest selling points is that the static sites it generates run “blazing-fast”. My project was a disappointing exception. By implementing gatsby-image I reasoned that my measly 32 could be improved significantly.
+
+### Implementation
+
+My project was based off of the gatsby-starter-default starter so I got started with gatsby-image by installing and verifying that I had the packages I’d need. To install the gatsby-image plugin with yarn I ran:
+
+yarn add gatsby-image
+
+The gatsby-image plugin can also additionally require that plugins gatsby-transformer-sharp and gatsby-plugin-sharp be installed and added to the config file. To do that I ran:
+
+yarn add gatsby-transformer-sharp  
+yarn add gatsby-plugin-sharp
+
+And then opened my `gatsby-config.js` and included the following (bolded) snippet:
+
+```javascript
+plugins: \[
+  // additional plugins
+  ...
+  {
+    resolve: \`gatsby-source-filesystem\`,
+    options: {
+      name: \`data\`,
+      path: \`${\_\_dirname}/src/data/\`
+    }
+  }, **\`gatsby-transformer-sharp\`,
+  \`gatsby-plugin-sharp\`**
+\]
+```
+
+Right after, I added another block to allow GraphQL to access my images:
+
+```javascript:title=gatsby-config.js
+plugins: \[
+  // additional plugins
+  ...
+  {
+    resolve: \`gatsby-source-filesystem\`,
+    options: {
+      name: \`data\`,
+      path: \`${\_\_dirname}/src/data/\`
+    }
+  },
+  **{
+    resolve: \`gatsby-source-filesystem\`,
+    options: {
+      name: \`img\`,
+      path: \`${\_\_dirname}/src/img/\`
+    }
+  },** \`gatsby-transformer-sharp\`,
+  \`gatsby-plugin-sharp\`
+\]
+```
+
+This snippet with resolve, options, name, and path allows me to query the `/img` directory inside of `/src` with GraphQL, which is how I’ll use it with the images in my filesystem. You can read more about how Gatsby uses GraphQL [here](https://www.gatsbyjs.org/docs/querying-with-graphql/).
+
+With that set up, I went to refactor the code in my `<Header />` component. My `<Header />` is a child of a`<TemplateWrapper />` component that is used on every page. Gatsby looks for GraphQL queries at build time inside of files in the `/src/pages` and `/src/layouts` directories. Those queries load the props of their respective components with a data attribute containing the queried data. In order to use the gatsby-image component in my header, I had to write my GraphQL query in the layout `<TemplateWrapper />` and pass the data down as a prop.
+
+To sum up that explanation in simpler steps:
+
+- `<TemplateWrapper />` needed a query to get the necessary data for my optimized image
+- `<TemplateWrapper />` would pass the data down to my `<Header />` as a prop
+- `<Header />` would plug that data into gatsby-image’s `<Img />` component where the magic happens
+
+To do this, I changed my`<TemplateWrapper />` in my `/src/layouts` directory to include a small GraphQL query:
+
+```javascript
+// imports
+...
+
+class TemplateWrapper extends React.Component {
+ render() {
+ return (
+
+ <div>
+ <Helmet title="Contemporarium" />
+ <Header **headerImage={this.props.data.headerImage}** />
+ {this.props.children()}
+ <Footer />
+ </div>
+ );
+ }
+}
+
+export default TemplateWrapper
+
+**export const pageQuery = graphql\`
+ query HeaderImageQuery {
+ headerImage: imageSharp(id: { regex: "/header/" }) {
+ sizes(maxWidth: 1240 ) {
+ ...GatsbyImageSharpSizes
+ }
+ }
+ }
+\`**
+```
+
+Note the `headerImage` prop being passed into the `<Header />` component, which we’ll use inside its code.
+
+**Explaining the query:**
+
+The query is called `HeaderImageQuery` and uses an alias called `headerImage` on the `imageSharp` field to make it more readable. My image called header.jpg, is identified by the argument passed into `imageSharp` that looks for a file with header in its name via regular expressions.
+
+Gatsby’s docs explain how queries should be written differently for 2 classifications of images that are explained [here](https://www.gatsbyjs.org/packages/gatsby-image/#two-types-of-responsive-images). Essentially any image will either be classified as either: (1) an exact size or (2) stretched to fill a container. Your query will look different depending on the nature of your image. Since my image will stretch across the header it’s of the second type, which means I query for the `sizes` field. I recommend reading the docs on this topic or looking at Gatsby’s [examples](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-gatsby-image/src/pages) for more help.
+
+`...GatsbyImageSharpSizes` is a [query fragment](http://graphql.org/learn/queries/#fragments) that includes several fields like sizes, originalName, aspectRatio, and several others so you don’t have to type them out yourself.
+
+With the data in the `sizes` object getting passed down to my `<Header />`, I was ready to switch out my `<img />` for the Gatsby equivalent! My header file went from this:
+
+```javascript
+import React from 'react'
+
+const Header = props => (
+  <header className="header">
+    <img
+      title="Header image"
+      alt="Greek food laid out on table"
+      src="../img/header.jpg"
+    />
+  </header>
+)
+
+export default Header
+```
+
+to this:
+
+```javascript
+import React from "react";
+**import Img from "gatsby-image";**
+const Header = props => (
+  <header className="header">
+    **<Img**
+      title="Header image"
+      alt="Greek food laid out on table"
+      **sizes={props.headerImage.sizes}**
+    **/>**
+  </header>
+);
+
+export default Header
+```
+
+Notice how little changed. I only had to add the import for gatsby-image, capitalize the tag, and change my `src` to `sizes` using the data in the sizes objects passed in from the GraphQL query I wrote, and now loading up my site with `gatsby develop`:
+
+![success!](https://cdn-images-1.medium.com/max/800/1*Aajedw5QNRRcKJ7k1ZosFA.gif)
+success!
+
+By changing the fragment I used back in my GraphQL query under my `<TemplateWrapper />` component I can change the loading style to something else like a traced SVG.
+
+```javascript
+export const pageQuery = graphql\`
+  query HeaderImageQuery {
+    headerImage: imageSharp(id: { regex: "/header/" }) {
+      sizes(maxWidth: 1240 ) {
+        **...GatsbyImageSharpSizes\_tracedSVG**
+      }
+    }
+  }
+\`
+```
+
+By just changing one line, I can change the image loading to look like this instead:
+![traced SVG loading with gatsby-image](https://cdn-images-1.medium.com/max/800/1*8cjRJ1s0GD_R39fjLlTeag.gif)
+traced SVG loading with gatsby-image
+
+### Results
+
+Now when I run a performance audit with Lighthouse I doubled my page’s score from 32 to 65! A few more optimization tweaks and the “blazing-fast” site promised by Gatsby is a reality.
+
+![](https://cdn-images-1.medium.com/max/800/1*waRTv0ILLS4l7QmWorjkYA.png)
+
+All it takes is one plugin, a GraphQL query, swapping in a new component and you’ve got yourself a much improved user experience for your site.
+
+### Thanks for reading!…
+
+If you thought this was interesting, leave a clap or two, subscribe for future updates, tweet me your thoughts, or retweet/share this tweet: 😊

@@ -1,6 +1,16 @@
 module.exports = {
   siteMetadata: {
     title: 'Kyle Gill | Developer & Designer',
+    social: [
+      {
+        name: `twitter`,
+        url: `https://twitter.com/gill_kyle`,
+      },
+      {
+        name: `github`,
+        url: `https://github.com/gillkyle`,
+      },
+    ],
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -12,12 +22,6 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-styled-components`,
-      options: {
-        ssr: true,
       },
     },
     {
@@ -45,6 +49,15 @@ module.exports = {
         google: {
           families: ['Lato'],
         },
+      },
+    },
+    {
+      resolve: 'gatsby-theme-blog',
+      options: {
+        basePath: '/blog',
+        contentPath: `${__dirname}/content/posts`,
+        assetPath: `${__dirname}/content/assets`,
+        mdx: true,
       },
     },
   ],

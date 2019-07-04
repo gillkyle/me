@@ -1,0 +1,134 @@
+---
+title: A Simple Guide to GatsbyJS Themes
+description: Turning sites into packages for composable websites
+date: '2019-04-22T15:15:20.259Z'
+categories: []
+keywords: []
+slug: /a-simple-guide-to-gatsbyjs-themes
+---
+
+![](https://cdn-images-1.medium.com/max/2560/1*f53ocM7GexaMcZEXuS902g.png)
+
+(Imagine how much time you’ll save when you eliminate all the time you spend debugging how you broke `node-sass` again.)
+
+#### The Possibilites with Themes
+
+In the words of [Jason Lengstorf](https://twitter.com/jlengstorf) in a podcast interview on [JavaScript to Elm](https://jstoelm.com/episodes/e075-jason_lengstorf/):
+
+> A theme is effectively a composable Gatsby config
+
+Just like functions in programming can be composed together like little mathematical nesting dolls, multiple themes can be composed together.
+
+A theme can be installed in another Gatsby project to make a parent theme, a child theme, or even be composed together horizontally to use multiple themes in a single site. You’re able to install a blog theme that houses all the details for your blog, a separate e-commerce theme that can support checkout, and then a styling theme that lays a skin over all the rest of them.
+
+#### Why use Themes?
+
+This exact topic is covered in [this](https://www.gatsbyjs.org/blog/2019-01-31-why-themes/) blog post by Kyle Mathews. To sum up some of his points and further his argument, themes provide a higher-level approach to working with Gatsby that abstract away the complex or repetitive parts into a reusable package.
+
+A traditional “one-off” Gatsby sites take a broad array of resources and combines them into a site, but each of those resources is handled individually and has to be added one at a time.
+
+Gatsby starters help to reduce that repetition, allowing you to make a boilerplate of each compose-able plugin or setting you wanted. That starter could be cloned right to where you want to start developing, but what happens when you want to update changes to 20 sites you’ve made from the same starter? The starter has basically been “ejected”, its git history deleted, and you’re left making updates across 20 different repositories with slightly adjusted implementation details.
+
+![Gatsby sites consume a variety of resources in what is dubbed the “content mesh”](https://cdn-images-1.medium.com/max/800/1*Q4RcNlm8xQwyDNzcALiyGw.png)
+Gatsby sites consume a variety of resources in what is dubbed the “content mesh”
+
+Themes solve that headache by allowing entire sites and configurations to be packaged up together. You can convert a site into a theme and then rather than pulling in and installing each plugin or asset you want each time you create a new site, the theme can be pulled in that handles all of those for you.
+
+Imagine having the ability to maintain your docs in a Gatsby site by (1) installing a theme (2) filling a folder with markdown files and (3) deploying, using the configuration setup by a theme author. (If you like that idea, great! Because we’re going to do it together 🙌)
+
+![A reusable configuration can be packaged up as a theme and implemented in a new site](https://cdn-images-1.medium.com/max/800/1*6w33P2NYlSBCwh7G0SyjxQ.png)
+A reusable configuration can be packaged up as a theme and implemented in a new site
+
+Themes are not stamped out, cookie cutter sites cloned into an entirely new repo like a WordPress theme. They are upstream pieces of your application that are consumed by your Gatsby project (potentially, _many_ Gatsby projects).
+
+#### How to use Themes
+
+So how do you make themes work? All of this sounds awesome, but so does cooking Baked Alaska, until you realize that the process of cooking involves lighting it on fire.
+
+Using themes in Gatsby is a similar process to using plugins in Gatsby, but I’m going to walk through what’s happening at each step to spell out what’s happening as simple as I can make it.
+
+_This tutorial assumes a general understanding the Gatsby, if you’re unfamiliar with what’s going on you can get up to speed_ [_here_](https://www.gatsbyjs.org/tutorial/) _or send_ [_me_](https://twitter.com/gill_kyle) _a message_ 🙂
+
+I’m beginning with the default Gatsby starter, running this command will generate a new Gatsby site and navigate into it:
+
+gatsby new gatsby-site && cd gatsby-site
+
+I can then install a theme into a site much like how a Gatsby plugin would be installed. I’m going to install the [gatsby-theme-docz](https://github.com/pedronauck/docz/tree/master/core/gatsby-theme-docz) theme, which will do the setup around configuring MDX files and generating docs for me.
+
+_Note: MDX is a format that lets you write JSX inside of Markdown files, basically letting us write in markdown as well as including React components alongside it, pretty cool!_
+
+yarn add gatsby-theme-docz
+
+Then I’ll open up my `gatsby-config.js` file to specify that I want to use themes in my Gatsby project with `__experimentalThemes`, and include the name of the theme I’m using:
+
+```javascript
+// gatsby-config.js
+
+
+module.exports = {
+  siteMetadata: {
+    ...
+  },
+  plugins: \[
+    ...
+  \],
+ **\_\_experimentalThemes: \[
+    {
+      resolve: "gatsby-theme-docz",
+    },
+  \],**
+}
+```
+
+Themes are exported from the config alongside plugins, metadata, and whatever else you might need to specify here.
+
+_Note: Gatsby themes are still an experimental feature in development, which is why the feature is prefixed with the word experimental_
+
+With that added, my project now relies on what I’ve defined in my config as well as what is defined in the theme’s config. Now I can start using any of the setup that the theme supplies in _my_ project (in this case, MDX). Adding a new `.mdx` file to the `src/pages` directory is enough to let the theme do the heavy lifting of configuring exactly how gatsby-mdx will behave (without me worrying about it).
+
+I added a file called `image.mdx` that I’ll use to show off `gatsby-image` which comes installed with the Gatsby default starter (and gives me speedy, optimized images without any of the pain). Then inside of the file I added, some really simple markdown and JSX:
+
+// src/pages/image.mdx
+
+```javascript
+import Img from "../components/image.js"
+
+**\# Image Component Example**
+
+Using the Gatsby image component makes performance fun again:
+
+<Img />
+```
+
+This file shows how powerful MDX can make authoring by allowing components to be imported right into markdown and then included right next to our plain markdown. We’re importing the Image component (that is already a part of the default starter) and using it like it would be written in normal React code.
+
+Now start up your server by running `gatsby develop` from the terminal and navigate to `[http://localhost:8000/image](http://localhost:8000)` in the browser:
+
+![The most comprehensive docs since AWS](https://cdn-images-1.medium.com/max/800/1*ko3m2cICeQudJGUj4pmiyg.png)
+The most comprehensive docs since AWS
+
+Just like that, I now have the Docz theme:
+
+- supplying the configuration for Gatsby MDX
+- turning `.mdx` files in the `src/pages` directory into new doc examples
+- putting a cool search bar on the left side of created pages for all the MDX files I add (you won’t find that component anywhere in the project, but it is still configurable thanks to [component shadowing](https://spectrum.chat/gatsby-themes/general/component-shadowing~5e16b3ab-d8e2-4b7c-a8f4-c0e168588e99))
+
+If I decide that there is a component in an imaginary theme `gatsby-theme-abc` that I want to use in my project I can import it from its path like this:
+
+```javascript
+import UsefulThing from 'gatsby-theme-abc/src/components/Useful'
+```
+
+Components, data, configuration, constants/tokens, they can all be wrapped up and passed down into the project where the theme is being used.
+
+This example is pretty small, but imagine having a whole series of sites leveraging multiple themes that utilize your design system, checkout flow, or data fetching. When they are all just made up of themes, the designers can focus on designing, and theme authors can neatly package up exactly what they want, and the possibilities are awesome.
+
+_You can view the code used for this demo here:_ [_https://github.com/gillkyle/gatsby-themes-demo-docz_](https://github.com/gillkyle/gatsby-themes-demo-docz)
+
+I’m really excited about themes and think they are deserving of the hype around them. There have already been a lot of cool uses for them in addition to projects like Docz. For instance, [Apollo](https://blog.apollographql.com/a-new-apollo-docs-experience-5645b9d56260) uses their own custom Gatsby theme for consistent experiences across their docs, and spinning up derivative sites like [Principled GraphQL](https://principledgraphql.com/).
+
+More advanced patterns will surely emerge in time and prove just how much can be done with themes.
+
+### Thanks for reading!…
+
+If you thought this was interesting, leave a clap or two, subscribe for future updates, tweet me your thoughts, or retweet/share this tweet: 😊
