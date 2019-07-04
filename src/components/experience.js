@@ -1,4 +1,6 @@
 import React from 'react'
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 import styled from '@emotion/styled'
 
 import Text from './shared/Text'
@@ -203,7 +205,7 @@ class Experience extends React.Component {
       <SectionContainer id="experience" backgroundFilled>
         <Image
           src={ExpLeftSideBar}
-          style={{
+          sx={{
             position: 'absolute',
             left: 0,
             transform: 'translateY(-50px)',
@@ -212,7 +214,7 @@ class Experience extends React.Component {
         />
         <Image
           src={ExpRightSideBar}
-          style={{
+          sx={{
             position: 'absolute',
             right: 0,
             transform: 'translateY(-50px)',

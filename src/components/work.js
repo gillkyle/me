@@ -1,4 +1,5 @@
-import React from 'react'
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 import styled from '@emotion/styled'
 
 import Image from './shared/Image'
@@ -28,12 +29,12 @@ const Hero = () => (
   <SectionContainer id="projects">
     <Image
       src={WorkLeftSideBarSVG}
-      style={{ position: 'absolute', left: 0 }}
+      sx={{ position: 'absolute', left: 0 }}
       lighten
     />
     <Image
       src={WorkRightSideBarSVG}
-      style={{ position: 'absolute', right: 0 }}
+      sx={{ position: 'absolute', right: 0 }}
       lighten
     />
     <ContentContainer style={{ gridGap: 30 }} numColumns={1}>

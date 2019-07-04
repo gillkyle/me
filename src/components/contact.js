@@ -1,4 +1,5 @@
-import React from 'react'
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 import styled from '@emotion/styled'
 
 import Image from './shared/Image'
@@ -58,46 +59,38 @@ const contactLinks = [
   },
 ]
 
-class Contact extends React.Component {
-  openLink = link => {
-    console.log('opening...')
+const Contact = () => {
+  const openLink = link => {
     let newPage = window.open(link, '_blank')
     newPage.focus()
   }
 
-  render() {
-    return (
-      <SectionContainer id="contact">
-        {/* <Image
-          src={HeroLeftSideBar}
-          style={{ position: 'absolute', left: 0 }}
-          lighten
-        /> */}
-        <ContentContainer style={{ gridGap: 30 }} numColumns={1}>
-          <Description>
-            <Heading>Contact</Heading>
-            <Paragraph size="xlarge" weight="bold">
-              Get in contact via{' '}
-              <Link
-                style={{ color: COLORS.black }}
-                href="mailto:kylerobertgill@gmail.com"
-              >
-                email
-              </Link>{' '}
-              or find me online
-            </Paragraph>
-          </Description>
-          <ContactCards>
-            {contactLinks.map(node => (
-              <ContactCard onClick={() => this.openLink(node.profile)}>
-                <ContactCardImage src={node.logo} />
-              </ContactCard>
-            ))}
-          </ContactCards>
-        </ContentContainer>
-      </SectionContainer>
-    )
-  }
+  return (
+    <SectionContainer id="contact">
+      <ContentContainer sx={{ gridGap: 30 }} numColumns={1}>
+        <Description>
+          <Heading>Contact</Heading>
+          <Paragraph size="xlarge" weight="bold">
+            Get in contact via{' '}
+            <Link
+              sx={{ color: COLORS.black }}
+              href="mailto:kylerobertgill@gmail.com"
+            >
+              email
+            </Link>{' '}
+            or find me online
+          </Paragraph>
+        </Description>
+        <ContactCards>
+          {contactLinks.map(node => (
+            <ContactCard onClick={() => openLink(node.profile)}>
+              <ContactCardImage src={node.logo} />
+            </ContactCard>
+          ))}
+        </ContactCards>
+      </ContentContainer>
+    </SectionContainer>
+  )
 }
 
 export default Contact
