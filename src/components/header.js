@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 import {
   COLORS,
@@ -61,7 +62,6 @@ const NavLinkButton = styled(Button)`
   cursor: pointer;
   background-color: ${COLORS.blue};
   color: ${COLORS.white};
-  border-radius: 5px;
   padding: 10px 20px;
   transition: ${TRANSITION};
   &:hover {

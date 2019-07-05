@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 import Button from './shared/Button'
 import Text from './shared/Text'
@@ -31,7 +31,6 @@ const IntroDescription = styled.div`
 `
 const IntroButton = styled(Button)`
   background-color: ${COLORS.white};
-  border-radius: ${BORDER_RADIUS.button};
   padding: 20px 60px;
   letter-spacing: 2px;
 `

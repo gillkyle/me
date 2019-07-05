@@ -1,5 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+import styled from '@emotion/styled'
 
 import Image from './shared/Image'
 import GatsbyImage from './shared/GatsbyImage'
@@ -26,12 +27,12 @@ const About = () => (
   <SectionContainer id="about">
     <Image
       src={AboutMeLeftSideBar}
-      style={{ position: 'absolute', left: 0, transform: 'translateY(-50px)' }}
+      sx={{ position: 'absolute', left: 0, transform: 'translateY(-50px)' }}
       lighten
     />
     <Image
       src={AboutMeRightSideBar}
-      style={{ position: 'absolute', right: 0, transform: 'translateY(-50px)' }}
+      sx={{ position: 'absolute', right: 0, transform: 'translateY(-50px)' }}
       lighten
     />
     <ContentContainer numColumns={2}>
@@ -65,7 +66,7 @@ const About = () => (
         </AboutDescription>
       </AboutMeContainer>
       <CenteredContainer>
-        <GatsbyImage style={{ height: '100%', width: '100%' }} />
+        <GatsbyImage sx={{ height: '100%', width: '100%' }} />
       </CenteredContainer>
     </ContentContainer>
   </SectionContainer>

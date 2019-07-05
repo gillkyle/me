@@ -1,5 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+import styled from '@emotion/styled'
 
 import Image from './shared/Image'
 import { Heading, Paragraph } from './shared/Typography'
@@ -28,12 +29,12 @@ const Hero = () => (
   <SectionContainer id="projects">
     <Image
       src={WorkLeftSideBarSVG}
-      style={{ position: 'absolute', left: 0 }}
+      sx={{ position: 'absolute', left: 0 }}
       lighten
     />
     <Image
       src={WorkRightSideBarSVG}
-      style={{ position: 'absolute', right: 0 }}
+      sx={{ position: 'absolute', right: 0 }}
       lighten
     />
     <ContentContainer style={{ gridGap: 30 }} numColumns={1}>
@@ -62,7 +63,7 @@ const Hero = () => (
           icon={SolJournalIcon}
           title="Sol Journal"
           desc="An open source, offline, personal journaling platform"
-          link="https://sol-journal.firebaseapp.com"
+          link="https://soljournal.netlify.com"
           repoName="sol-journal"
         />
         <ProjectCard
