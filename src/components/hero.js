@@ -31,7 +31,6 @@ const IntroDescription = styled.div`
 `
 const IntroButton = styled(Button)`
   background-color: ${COLORS.white};
-  border-radius: ${BORDER_RADIUS.button};
   padding: 20px 60px;
   letter-spacing: 2px;
 `

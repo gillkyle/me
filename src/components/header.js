@@ -62,7 +62,6 @@ const NavLinkButton = styled(Button)`
   cursor: pointer;
   background-color: ${COLORS.blue};
   color: ${COLORS.white};
-  border-radius: 5px;
   padding: 10px 20px;
   transition: ${TRANSITION};
   &:hover {

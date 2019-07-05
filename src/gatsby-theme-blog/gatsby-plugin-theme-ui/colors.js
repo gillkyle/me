@@ -35,13 +35,13 @@ export default {
   },
   modes: {
     dark: {
-      text: lightWhite,
-      background: grey90,
-      primary: purple30,
-      secondary: lightWhite,
-      muted: opaqueLightWhite,
-      highlight: purple60,
-      heading: white,
+      text: COLORS.lightWhite,
+      background: COLORS.black,
+      primary: COLORS.blue,
+      secondary: COLORS.lightGray,
+      muted: COLORS.gray,
+      highlight: COLORS.semiGold,
+      heading: COLORS.gold,
     },
   },
 }

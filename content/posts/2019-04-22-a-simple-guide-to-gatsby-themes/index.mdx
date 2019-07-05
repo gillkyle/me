@@ -9,7 +9,24 @@ slug: /a-simple-guide-to-gatsbyjs-themes
 
 ![](https://cdn-images-1.medium.com/max/2560/1*f53ocM7GexaMcZEXuS902g.png)
 
-(Imagine how much time you’ll save when you eliminate all the time you spend debugging how you broke `node-sass` again.)
+_(Gatsby v2.3.25)_
+
+Gatsby recently announced themes, and I got excited. Upon reading through all sorts of write-up on them, my response at first was "huh?" A lot of cool technical speak sounded impressive, but until I started tinkering around with them it was hard to see just how exciting they could be.
+
+Since digging into them I now am of the opinion that with themes, what's already powerful about Gatsby turns into an even more heavily customizable juggernaut of a tool. This post looks at the advantages of themes from a more beginner, higher-level approach, as well as how a theme can be implemented in a Gatsby site (not how themes are authored, which other resources cover).
+
+### Understanding Themes
+
+A Gatsby theme is installed as an npm package, but at its core is setup like any other Gatsby site. Essentially, you can convert one Gatsby project into a reusable building block for other Gatsby projects. This flexibility means you can utilize a theme for multiple sites with use cases like:
+
+- Abstracting away configurations setting up Gatsby plugins like gatsby-mdx or gatsby-image
+- Sourcing data from multiple locations like WordPress, Shopify, or your own microservices
+- Updating shared functionality once and propagating changes with a simple npm install of your theme
+- Making big money cranking out sites for clients faster than the US Economy can go into debt 💰
+
+Thinking of themes as an npm package is useful to understand the power that this abstraction brings to development. Just like package authors of npm can expose more or less of an API to provide greater or less flexibility at different tradeoffs, Gatsby theme authors can provide varying levels of control to users of the theme, providing configuration setup, styling rules, or whole components!
+
+(Think about how much time you’ll save when you eliminate all the time you spend debugging how you broke `node-sass` again.)
 
 #### The Possibilites with Themes
 
@@ -51,15 +68,19 @@ _This tutorial assumes a general understanding the Gatsby, if you’re unfamilia
 
 I’m beginning with the default Gatsby starter, running this command will generate a new Gatsby site and navigate into it:
 
+```shell
 gatsby new gatsby-site && cd gatsby-site
+```
 
 I can then install a theme into a site much like how a Gatsby plugin would be installed. I’m going to install the [gatsby-theme-docz](https://github.com/pedronauck/docz/tree/master/core/gatsby-theme-docz) theme, which will do the setup around configuring MDX files and generating docs for me.
 
 _Note: MDX is a format that lets you write JSX inside of Markdown files, basically letting us write in markdown as well as including React components alongside it, pretty cool!_
 
+```shell
 yarn add gatsby-theme-docz
+```
 
-Then I’ll open up my `gatsby-config.js` file to specify that I want to use themes in my Gatsby project with `__experimentalThemes`, and include the name of the theme I’m using:
+Then I’ll open up my `gatsby-config.js` file to and include the name of the theme I’m using in the plugins array:
 
 ```javascript
 // gatsby-config.js
@@ -69,31 +90,20 @@ module.exports = {
   siteMetadata: {
     ...
   },
-  plugins: \[
-    ...
-  \],
- **\_\_experimentalThemes: \[
-    {
-      resolve: "gatsby-theme-docz",
-    },
-  \],**
+  plugins: ["gatsby-theme-docz"],
 }
 ```
-
-Themes are exported from the config alongside plugins, metadata, and whatever else you might need to specify here.
-
-_Note: Gatsby themes are still an experimental feature in development, which is why the feature is prefixed with the word experimental_
 
 With that added, my project now relies on what I’ve defined in my config as well as what is defined in the theme’s config. Now I can start using any of the setup that the theme supplies in _my_ project (in this case, MDX). Adding a new `.mdx` file to the `src/pages` directory is enough to let the theme do the heavy lifting of configuring exactly how gatsby-mdx will behave (without me worrying about it).
 
 I added a file called `image.mdx` that I’ll use to show off `gatsby-image` which comes installed with the Gatsby default starter (and gives me speedy, optimized images without any of the pain). Then inside of the file I added, some really simple markdown and JSX:
 
+```js
 // src/pages/image.mdx
 
-```javascript
-import Img from "../components/image.js"
+import Img from '../components/image.js'
 
-**\# Image Component Example**
+# Image Component Example
 
 Using the Gatsby image component makes performance fun again:
 

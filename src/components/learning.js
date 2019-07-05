@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql, Link } from 'gatsby'
 
+import Button from './shared/Button'
 import Image from './shared/Image'
 import { Heading, Paragraph } from './shared/Typography'
 import {
@@ -116,6 +117,11 @@ class Learning extends React.Component {
               )}
             />
           </CardGrid>
+          <div>
+            <Link to="/blog">
+              <Button>See all posts</Button>
+            </Link>
+          </div>
         </ContentContainer>
       </SectionContainer>
     )

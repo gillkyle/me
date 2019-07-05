@@ -2,8 +2,8 @@ import React from 'react'
 
 export default () => (
   <>
-    This is my updated bio.
+    Kyle Gill
     <br />
-    It's shadowing the content from the theme.
+    Fan of learning cool things, building cool things, and cool music.
   </>
 )
