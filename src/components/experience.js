@@ -191,101 +191,91 @@ const jobs = [
   },
 ]
 
-class Experience extends React.Component {
-  state = {
-    selectedIndex: null,
-  }
+const Experience = () => {
+  const [selectedIndex, setIndex] = React.useState(null)
 
-  onSelectJob = selectedIndex => this.setState({ selectedIndex })
+  const onSelectJob = selectedIndex => setIndex(selectedIndex)
 
-  render() {
-    const { selectedIndex } = this.state
-    const selectedJob = jobs[selectedIndex] || jobs[0]
-    return (
-      <SectionContainer id="experience" backgroundFilled>
-        <Image
-          src={ExpLeftSideBar}
-          sx={{
-            position: 'absolute',
-            left: 0,
-            transform: 'translateY(-50px)',
-          }}
-          lighten
-        />
-        <Image
-          src={ExpRightSideBar}
-          sx={{
-            position: 'absolute',
-            right: 0,
-            transform: 'translateY(-50px)',
-          }}
-          lighten
-        />
-        <ContentContainer style={{ gridGap: 30 }}>
-          <Intro>
-            <Heading inverted>Experience</Heading>
-            <IntroDescription>
-              <Paragraph
-                size="xlarge"
-                weight="bold"
-                color="lightWhite"
-                inverted
-              >
-                Here are a few places I've worked
-              </Paragraph>
-            </IntroDescription>
-          </Intro>
-          <WorkContainer>
-            <WorkButtons>
-              {jobs.map((job, index) => (
-                <WorkButton onClick={() => this.onSelectJob(index)}>
-                  <Dot active={index === selectedIndex} />
-                  {job.company}
-                </WorkButton>
-              ))}
-            </WorkButtons>
-            <WorkDetails>
-              <div style={{ padding: '5px 0' }}>
-                <Text color="white" size="xxlarge" weight="bold">
-                  {selectedJob.jobTitle}{' '}
-                </Text>
-                <Text color="gold" size="xxlarge" weight="bold">
-                  @ {selectedJob.company}
-                </Text>
-              </div>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                }}
-              >
-                <RoundedImageContainer>
-                  <img
-                    style={{ widght: 35, height: 35, borderRadius: 5 }}
-                    src={selectedJob.logo}
-                    alt=":("
-                  />
-                </RoundedImageContainer>
-                <Text color="lightWhite" size="medium">
-                  {selectedJob.dates}
-                </Text>
-              </div>
-              <div>
-                <Text color="lightWhite" size="medium">
-                  <UList columns={1} style={{}}>
-                    {selectedJob.bullets.map(bullet => (
-                      <ListItem color="white">{bullet}</ListItem>
-                    ))}
-                  </UList>
-                </Text>
-              </div>
-            </WorkDetails>
-          </WorkContainer>
-        </ContentContainer>
-      </SectionContainer>
-    )
-  }
+  const selectedJob = jobs[selectedIndex] || jobs[0]
+  return (
+    <SectionContainer id="experience" backgroundFilled>
+      <Image
+        src={ExpLeftSideBar}
+        sx={{
+          position: 'absolute',
+          left: 0,
+          transform: 'translateY(-50px)',
+        }}
+        lighten
+      />
+      <Image
+        src={ExpRightSideBar}
+        sx={{
+          position: 'absolute',
+          right: 0,
+          transform: 'translateY(-50px)',
+        }}
+        lighten
+      />
+      <ContentContainer style={{ gridGap: 30 }}>
+        <Intro>
+          <Heading inverted>Experience</Heading>
+          <IntroDescription>
+            <Paragraph size="xlarge" weight="bold" color="lightWhite" inverted>
+              Here are a few places I've worked
+            </Paragraph>
+          </IntroDescription>
+        </Intro>
+        <WorkContainer>
+          <WorkButtons>
+            {jobs.map((job, index) => (
+              <WorkButton onClick={() => onSelectJob(index)}>
+                <Dot active={index === selectedIndex} />
+                {job.company}
+              </WorkButton>
+            ))}
+          </WorkButtons>
+          <WorkDetails>
+            <div style={{ padding: '5px 0' }}>
+              <Text color="white" size="xxlarge" weight="bold">
+                {selectedJob.jobTitle}{' '}
+              </Text>
+              <Text color="gold" size="xxlarge" weight="bold">
+                @ {selectedJob.company}
+              </Text>
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}
+            >
+              <RoundedImageContainer>
+                <img
+                  style={{ widght: 35, height: 35, borderRadius: 5 }}
+                  src={selectedJob.logo}
+                  alt=":("
+                />
+              </RoundedImageContainer>
+              <Text color="lightWhite" size="medium">
+                {selectedJob.dates}
+              </Text>
+            </div>
+            <div>
+              <Text color="lightWhite" size="medium">
+                <UList columns={1} style={{}}>
+                  {selectedJob.bullets.map(bullet => (
+                    <ListItem color="white">{bullet}</ListItem>
+                  ))}
+                </UList>
+              </Text>
+            </div>
+          </WorkDetails>
+        </WorkContainer>
+      </ContentContainer>
+    </SectionContainer>
+  )
 }
 
 export default Experience

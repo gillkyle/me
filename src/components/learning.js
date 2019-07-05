@@ -1,4 +1,6 @@
 import React from 'react'
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 import styled from '@emotion/styled'
 import { StaticQuery, graphql, Link } from 'gatsby'
 
@@ -24,108 +26,90 @@ const IntroDescription = styled.div`
   margin-bottom: 25px;
 `
 
-class Learning extends React.Component {
-  state = {
-    selectedIndex: null,
-  }
-
-  onSelectJob = selectedIndex =>
-    console.log(selectedIndex) || this.setState({ selectedIndex })
-
-  render() {
-    return (
-      <SectionContainer id="learning" backgroundFilled>
-        <Image
-          src={ExpLeftSideBar}
-          style={{
-            position: 'absolute',
-            left: 0,
-            transform: 'translateY(-50px)',
-          }}
-          lighten
-        />
-        <Image
-          src={ExpRightSideBar}
-          style={{
-            position: 'absolute',
-            right: 0,
-            transform: 'translateY(-50px)',
-          }}
-          lighten
-        />
-        <ContentContainer style={{ gridGap: 30 }}>
-          <Intro>
-            <Heading inverted>Learning</Heading>
-            <IntroDescription>
-              <Paragraph
-                size="xlarge"
-                weight="bold"
-                color="lightWhite"
-                inverted
-              >
-                I blog about things I've learned and done on Medium, these are a
-                few of my posts
-              </Paragraph>
-            </IntroDescription>
-          </Intro>
-          <CardGrid mediaSize="desktop">
-            <StaticQuery
-              query={graphql`
-                query MediumPosts {
-                  allMediumPost(sort: { fields: [createdAt], order: DESC }) {
-                    edges {
-                      node {
-                        id
-                        title
-                        uniqueSlug
-                        virtuals {
-                          totalClapCount
-                          subtitle
-                          previewImage {
-                            imageId
-                          }
-                        }
+const Learning = () => {
+  return (
+    <SectionContainer id="learning" backgroundFilled>
+      <Image
+        src={ExpLeftSideBar}
+        style={{
+          position: 'absolute',
+          left: 0,
+          transform: 'translateY(-50px)',
+        }}
+        lighten
+      />
+      <Image
+        src={ExpRightSideBar}
+        style={{
+          position: 'absolute',
+          right: 0,
+          transform: 'translateY(-50px)',
+        }}
+        lighten
+      />
+      <ContentContainer style={{ gridGap: 30 }}>
+        <Intro>
+          <Heading inverted>Learning</Heading>
+          <IntroDescription>
+            <Paragraph size="xlarge" weight="bold" color="lightWhite" inverted>
+              I blog about things I've learned on my site, these are a few of my
+              posts
+            </Paragraph>
+          </IntroDescription>
+        </Intro>
+        <CardGrid mediaSize="desktop">
+          <StaticQuery
+            query={graphql`
+              query MyBlogPosts {
+                allBlogPost(limit: 4, sort: { fields: date, order: DESC }) {
+                  edges {
+                    node {
+                      id
+                      date
+                      slug
+                      title
+                      fields {
+                        subtitle
+                        imageUrl
                       }
                     }
                   }
                 }
-              `}
-              render={({ allMediumPost: { edges } }) => (
-                <>
-                  {edges.map(
-                    ({
-                      node: {
-                        title,
-                        uniqueSlug,
-                        virtuals: {
-                          subtitle,
-                          totalClapCount,
-                          previewImage: { imageId },
-                        },
-                      },
-                    }) => (
-                      <BlogCard
-                        title={title}
-                        subtitle={subtitle}
-                        claps={totalClapCount > 50 ? totalClapCount : '<50'}
-                        imageUrl={imageId}
-                        link={`https://medium.com/@kyle.robert.gill/${uniqueSlug}`}
-                      />
-                    )
-                  )}
-                </>
-              )}
-            />
-          </CardGrid>
-          <div>
-            <Link to="/blog">
-              <Button>See all posts</Button>
-            </Link>
-          </div>
-        </ContentContainer>
-      </SectionContainer>
-    )
-  }
+              }
+            `}
+            render={({ allBlogPost: { edges } }) => (
+              <>
+                {edges.map(
+                  ({
+                    node: {
+                      date,
+                      slug,
+                      title,
+                      fields: { subtitle, imageUrl },
+                    },
+                  }) => (
+                    <BlogCard
+                      date={date}
+                      title={title}
+                      subtitle={subtitle}
+                      claps={'<50'}
+                      imageUrl={imageUrl}
+                      link={slug}
+                    />
+                  )
+                )}
+              </>
+            )}
+          />
+        </CardGrid>
+        <div sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Link to="/blog">
+            <Button>See all posts</Button>
+          </Link>
+        </div>
+      </ContentContainer>
+    </SectionContainer>
+  )
 }
 
 export default Learning

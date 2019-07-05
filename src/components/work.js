@@ -63,7 +63,7 @@ const Hero = () => (
           icon={SolJournalIcon}
           title="Sol Journal"
           desc="An open source, offline, personal journaling platform"
-          link="https://sol-journal.firebaseapp.com"
+          link="https://soljournal.netlify.com"
           repoName="sol-journal"
         />
         <ProjectCard
