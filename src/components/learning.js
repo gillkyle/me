@@ -68,9 +68,13 @@ const Learning = () => {
                       date
                       slug
                       title
-                      fields {
-                        subtitle
-                        imageUrl
+                      parent {
+                        ... on Mdx {
+                          frontmatter {
+                            image
+                            description
+                          }
+                        }
                       }
                     }
                   }
@@ -85,7 +89,9 @@ const Learning = () => {
                       date,
                       slug,
                       title,
-                      fields: { subtitle, imageUrl },
+                      parent: {
+                        frontmatter: { image: imageUrl, description: subtitle },
+                      },
                     },
                   }) => (
                     <BlogCard
