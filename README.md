@@ -1,6 +1,6 @@
 <p align="center">
   <a href="http://www.kylegill.com">
-    <img alt="Gatsby" src="http://kylegill.com/static/AboutMeGraphic-1e96f62771de094b6fad0b09189f1bcf-2f7cf.png" width="240" />
+    <img alt="Gatsby" src="https://raw.githubusercontent.com/gillkyle/images/master/about-me.png" width="240" />
   </a>
 </p>
 <h1 align="center">
