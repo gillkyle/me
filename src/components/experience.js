@@ -264,7 +264,7 @@ const Experience = () => {
             </div>
             <div>
               <Text color="lightWhite" size="medium">
-                <UList columns={1} style={{}}>
+                <UList columns={1} style={{ color: COLORS.white }}>
                   {selectedJob.bullets.map(bullet => (
                     <ListItem color="white">{bullet}</ListItem>
                   ))}

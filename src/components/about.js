@@ -15,6 +15,7 @@ import AboutMeLeftSideBar from '../images/AboutMeLeftSideBar.svg'
 import AboutMeRightSideBar from '../images/AboutMeRightSideBar.svg'
 
 import { Heading, Paragraph } from './shared/Typography'
+import { COLORS } from '../styles/constants'
 
 const AboutMeContainer = styled.div`
   display: flex;
@@ -51,7 +52,7 @@ const About = () => (
             new.
           </Paragraph>
           <Paragraph>Here are some things I'm experienced with:</Paragraph>
-          <UList>
+          <UList style={{ color: COLORS.black }}>
             <ListItem>Javascript</ListItem>
             <ListItem>React</ListItem>
             <ListItem>Gatsby</ListItem>

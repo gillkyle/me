@@ -48,7 +48,7 @@ const Hero = () => (
         <ProjectCard
           icon={SyntheticIcon}
           title="Synthetic"
-          desc="A Spotify powered, data-driven web app to discover new musics"
+          desc="A Spotify powered, data-driven web app to discover new music"
           link="https://synthetic.netlify.com"
           repoName="synthetic"
         />

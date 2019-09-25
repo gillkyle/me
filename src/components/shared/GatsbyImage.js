@@ -28,7 +28,12 @@ const Image = () => (
     `}
     render={data => (
       <Img
-        style={{ objectFit: 'contain', width: '100%', maxHeight: 600 }}
+        style={{
+          objectFit: 'contain',
+          width: '100%',
+          minHeight: 200,
+          maxHeight: 600,
+        }}
         fluid={data.placeholderImage.childImageSharp.fixed}
       />
     )}

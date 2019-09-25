@@ -15,12 +15,11 @@ export const ContentContainer = styled.div`
   max-width: 960px;
   display: grid;
   grid-gap: 70px;
-grid-template-columns: ${props => `repeat(${props.numColumns}, 1fr)`};
+  grid-template-columns: ${props => `repeat(${props.numColumns}, 1fr)`};
   @media (max-width: ${MEDIA_QUERIES['mobile']}px) {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
-  };
 `
 export const CenteredContainer = styled.div`
   display: flex;
