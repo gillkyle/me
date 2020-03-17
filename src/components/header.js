@@ -1,4 +1,6 @@
 import React from 'react'
+/** @jsx jsx */
+import { jsx, Styled } from 'theme-ui'
 import { Link } from 'gatsby'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import styled from '@emotion/styled'
@@ -19,24 +21,20 @@ const HeaderBar = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   background: ${COLORS['white']};
   height: 100px;
   padding: ${MARGIN.default};
   padding-top: 0px;
   padding-bottom: 0px;
   box-shadow: ${SHADOW};
-  overflow-x: scroll;
+  overflow-x: auto;
   transition: ${TRANSITION};
   border-top: ${COLORS.gold} 4px solid;
-  border-image: ${`linear-gradient(to left, ${COLORS.gold} 0%, ${
-    COLORS.semiGold
-  } 100%)`};
+  border-image: ${`linear-gradient(to left, ${COLORS.gold} 0%, ${COLORS.semiGold} 100%)`};
   border-image-slice: 1;
   @media (max-width: ${MEDIA_QUERIES['mobile']}px) {
     padding: ${MARGIN.small};
-    padding-top: 0px;
-    padding-bottom: 0px;
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -45,10 +43,10 @@ const HeaderBar = styled.div`
 const NavLinks = styled.div`
   display: grid;
   grid-gap: 45px;
-  grid-template-columns: repeat(6, auto);
+  grid-template-columns: auto;
   align-items: center;
   @media (max-width: ${MEDIA_QUERIES['mobile']}px) {
-    overflow-x: scroll;
+    overflow-x: auto;
   }
 `
 
@@ -78,18 +76,46 @@ const NavLinkButton = styled(Button)`
 `
 
 const Header = () => (
-  <HeaderBar>
-    <NavLinks>
-      <NavLink href="#about">About</NavLink>
-      <NavLink href="#experience">Experience</NavLink>
-      <NavLink href="#projects">Work</NavLink>
-      <NavLink href="#learning">Learning</NavLink>
-      <NavLink href="#contact">Contact</NavLink>
-      <a href={resume} download>
-        <NavLinkButton>Resume</NavLinkButton>
-      </a>
-    </NavLinks>
-  </HeaderBar>
+  <Styled.root>
+    <HeaderBar>
+      <div sx={{ '*+*': { ml: 3 } }}>
+        <span sx={{ color: `muted` }}>Kyle Gill</span>
+        <Link
+          to="/"
+          sx={{
+            fontSize: 2,
+            textDecoration: `none`,
+            color: `primary`,
+            fontWeight: `bold`,
+          }}
+        >
+          Home
+        </Link>
+        <Link
+          to="/blog"
+          sx={{
+            fontSize: 2,
+            textDecoration: `none`,
+            color: `primary`,
+            fontWeight: `bold`,
+          }}
+        >
+          Blog
+        </Link>
+      </div>
+      <NavLinks>
+        <a
+          href="mailto:kylerobertgill@gmail.com"
+          sx={{
+            fontSize: 2,
+            fontWeight: `bold`,
+          }}
+        >
+          <NavLinkButton>Email Me</NavLinkButton>
+        </a>
+      </NavLinks>
+    </HeaderBar>
+  </Styled.root>
 )
 
 export default Header

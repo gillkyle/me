@@ -17,6 +17,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-favicon',
+    `gatsby-plugin-theme-ui`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -45,7 +46,7 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-theme-blog',
+      resolve: `gatsby-theme-blog`,
       options: {
         basePath: '/blog',
         contentPath: `${__dirname}/content/posts`,

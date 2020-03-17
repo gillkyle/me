@@ -61,19 +61,17 @@ const Learning = () => {
           <StaticQuery
             query={graphql`
               query MyBlogPosts {
-                allBlogPost(limit: 4, sort: { fields: date, order: DESC }) {
-                  edges {
-                    node {
-                      id
-                      date
-                      slug
-                      title
-                      parent {
-                        ... on Mdx {
-                          frontmatter {
-                            image
-                            description
-                          }
+                allMdxBlogPost(limit: 4, sort: { fields: date, order: DESC }) {
+                  nodes {
+                    id
+                    date
+                    slug
+                    title
+                    parent {
+                      ... on Mdx {
+                        frontmatter {
+                          image
+                          description
                         }
                       }
                     }
@@ -81,17 +79,15 @@ const Learning = () => {
                 }
               }
             `}
-            render={({ allBlogPost: { edges } }) => (
+            render={({ allMdxBlogPost: { nodes } }) => (
               <>
-                {edges.map(
+                {nodes.map(
                   ({
-                    node: {
-                      date,
-                      slug,
-                      title,
-                      parent: {
-                        frontmatter: { image: imageUrl, description: subtitle },
-                      },
+                    date,
+                    slug,
+                    title,
+                    parent: {
+                      frontmatter: { image: imageUrl, description: subtitle },
                     },
                   }) => (
                     <BlogCard

@@ -1,5 +1,5 @@
 html {
-  font-family: Lato, sans-serif;
+  font-family: Lato, sans-serif !important;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
