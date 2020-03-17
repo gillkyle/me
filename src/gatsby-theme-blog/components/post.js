@@ -16,26 +16,27 @@ const Post = ({
   location,
   previous,
   next,
-}) => (
-  <React.Fragment>
-    <Layout location={location} title={title}>
-      <SEO title={post.title} description={post.excerpt} />
-      <main>
-        <Styled.h1>{post.title}</Styled.h1>
-        <Styled.p
-          css={css({
-            fontSize: 1,
-            mt: -3,
-            mb: 3,
-          })}
-        >
-          {post.date}
-        </Styled.p>
-        <MDXRenderer>{post.body}</MDXRenderer>
-      </main>
-      <PostFooter {...{ previous, next }} />
-    </Layout>
-  </React.Fragment>
-)
+}) =>
+  console.log(post) || (
+    <React.Fragment>
+      <Layout location={location} title={title}>
+        <SEO title={post.title} description={post.excerpt} />
+        <main>
+          <Styled.h1>{post.title}</Styled.h1>
+          <Styled.p
+            css={css({
+              fontSize: 1,
+              mt: -3,
+              mb: 3,
+            })}
+          >
+            {post.date}
+          </Styled.p>
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </main>
+        <PostFooter {...{ previous, next }} />
+      </Layout>
+    </React.Fragment>
+  )
 
 export default Post

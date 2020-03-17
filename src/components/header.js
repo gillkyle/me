@@ -28,7 +28,7 @@ const HeaderBar = styled.div`
   padding-top: 0px;
   padding-bottom: 0px;
   box-shadow: ${SHADOW};
-  overflow-x: scroll;
+  overflow-x: auto;
   transition: ${TRANSITION};
   border-top: ${COLORS.gold} 4px solid;
   border-image: ${`linear-gradient(to left, ${COLORS.gold} 0%, ${COLORS.semiGold} 100%)`};
@@ -46,7 +46,7 @@ const NavLinks = styled.div`
   grid-template-columns: auto;
   align-items: center;
   @media (max-width: ${MEDIA_QUERIES['mobile']}px) {
-    overflow-x: scroll;
+    overflow-x: auto;
   }
 `
 

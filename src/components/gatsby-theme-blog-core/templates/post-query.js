@@ -23,7 +23,7 @@ export const query = graphql`
       tags
       keywords
       date(formatString: "MMMM DD, YYYY")
-      parent {
+      mdxInfo: parent {
         ... on Mdx {
           frontmatter {
             image

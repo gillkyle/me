@@ -33,7 +33,7 @@ export default {
     color: `primary`,
   },
   hr: {
-    borderColor: `muted`,
+    borderColor: `#ccc`,
   },
   p: {
     code: {
