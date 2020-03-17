@@ -37,6 +37,8 @@ const HeaderBar = styled.div`
     padding: ${MARGIN.small};
     padding-left: 30px;
     padding-right: 30px;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 `
 
