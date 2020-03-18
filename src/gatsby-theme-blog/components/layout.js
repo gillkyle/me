@@ -13,12 +13,22 @@ const PostLayout = ({ children, ...props }) => (
     <div sx={{ zIndex: -5 }}>
       <Image
         src={WorkLeftSideBarSVG}
-        sx={{ position: 'absolute', left: -15, zIndex: -6 }}
+        sx={{
+          position: 'absolute',
+          left: 0,
+          zIndex: -6,
+          '&': { opacity: [0.25, 0.5, 1] },
+        }}
         lighten
       />
       <Image
         src={WorkRightSideBarSVG}
-        sx={{ position: 'absolute', right: -15, zIndex: -6 }}
+        sx={{
+          position: 'absolute',
+          right: 0,
+          zIndex: -6,
+          '&': { opacity: [0.25, 0.5, 1] },
+        }}
         lighten
       />
       <div

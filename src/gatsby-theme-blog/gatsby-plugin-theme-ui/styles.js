@@ -40,6 +40,10 @@ export default {
       fontSize: `inherit`,
     },
   },
+  img: {
+    borderRadius: 10,
+    mx: -1,
+  },
   li: {
     code: {
       fontSize: `inherit`,

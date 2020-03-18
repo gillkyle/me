@@ -27,6 +27,7 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => (
               <div
                 sx={{
                   color: `gray`,
+                  backgroundColor: `white`,
                   padding: 4,
                   borderRadius: 20,
                   boxShadow: SHADOW,
