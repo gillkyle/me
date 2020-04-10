@@ -46,7 +46,7 @@ const SmallImage = styled(Image)`
 `
 
 const Hero = () => (
-  <SectionContainer style={{ paddingTop: 30 }} backgroundFilled>
+  <SectionContainer style={{ paddingTop: 60 }} backgroundFilled>
     <Image
       src={HeroLeftSideBar}
       style={{ position: 'absolute', left: 0 }}
