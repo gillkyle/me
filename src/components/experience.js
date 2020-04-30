@@ -113,7 +113,7 @@ const jobs = [
   {
     company: 'Gatsby',
     logo: GatsbyLogo,
-    jobTitle: 'Software Engineer Intern',
+    jobTitle: 'Software Engineer',
     dates: 'May 2019 - Present',
     bullets: [
       <Text>
