@@ -37,6 +37,17 @@ const PostLayout = ({ children, ...props }) => (
           margin: `0 auto`,
           px: 3,
           py: 4,
+          '& .gatsby-resp-image-wrapper': {
+            borderRadius: 10,
+            marginLeft: `-6px !important`,
+            marginRight: `-6px !important`,
+            '& img': {
+              borderRadius: 10,
+            },
+            '& span': {
+              borderRadius: 10,
+            },
+          },
         })}
       >
         {children}
