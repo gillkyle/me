@@ -113,8 +113,26 @@ const jobs = [
   {
     company: 'Gatsby',
     logo: GatsbyLogo,
-    jobTitle: 'Software Engineer',
-    dates: 'May 2019 - Present',
+    jobTitle: 'Senior Software Engineer',
+    dates: 'May 2020 - Present',
+    bullets: [
+      <Text>
+        Built{' '}
+        <Link href="https://www.gatsbyjs.com/careers/" target="_blank">
+          custom HR pipeline
+        </Link>{' '}
+        integrating 3rd party HR platforms with a custom frontend and serverless
+        backend
+      </Text>,
+      `Developed public user portals and internal admin tooling on company microservices`,
+      `Core maintainer of docs and guides for official Gatsby documentation that received over 20 yearly million page views and regarded as some of the most comprehensive and approachable docs available`,
+    ],
+  },
+  {
+    company: 'Gatsby',
+    logo: GatsbyLogo,
+    jobTitle: 'Software Engineer Intern',
+    dates: 'May 2019 - May 2020',
     bullets: [
       <Text>
         Built implementation of the{' '}

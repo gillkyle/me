@@ -76,7 +76,7 @@ const Hero = () => (
           <Paragraph inverted>
             I'm a software engineer specializing in developing - and often
             designing - high-quality applications and websites. I’m currently a
-            Software Engineer Intern at Gatsby.
+            Senior Software Engineer at Gatsby.
           </Paragraph>
         </IntroDescription>
         <div>

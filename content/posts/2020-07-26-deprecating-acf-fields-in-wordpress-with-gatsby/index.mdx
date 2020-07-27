@@ -1,0 +1,47 @@
+---
+title: Deprecating ACF fields in WPGraphQL and Gatsby
+description: Keeping GraphQL schemas between Gatsby and WPGraphQL up-to-date.
+date: '2020-07-26'
+categories: []
+keywords: []
+---
+
+In a Gatsby site using WPGraphQL, you might encounter errors when changing the structure of content types on your headless WordPress backend. The way you query components in your Gatsby frontend needs to match the shape of data in the backend. Because headless WordPress essentially turns WordPress into
+
+## The error message, failing to query field on a given type
+
+```
+There was an error in your GraphQL query:
+
+Cannot query field "X" on type "Y".
+```
+
+This error can occur when you change a type (like a field created with the ACF WordPress plugin) because the Gatsby GraphQL schema no longer matches the one in your WordPress backend.
+
+In my case I had a field called `lineHighlight` on a `Codeblock` field. It was intended to add line highlighting capabilities to a component that rendered code inside it. I was querying this in my Gatsby site like this:
+
+```
+query {
+  wpPost {
+    flexibleContentBlock {
+      ... on Wp_CodeBlock {
+        id
+        codeContent
+        lineHighlight
+      }
+    }
+  }
+}
+```
+
+If I were to delete that field from the field in ACF, it would no longer exist in the frontend and Gatsby's schema would break. Had I used [schema customization APIs](https://www.gatsbyjs.org/docs/schema-customization/) from Gatsby I could have made sure that field was still around by explicitly defining what my `wpPost` type had on it. I wasn't however, and by deleting the field, my site's frontend broke.
+
+## Workaround by hiding fields
+
+As a workaround, I thought through the scenario and realized my editing on WordPress was essentially a visual API builder. By removing fields, I was (in API terms) deprecating a field. I decided instead to hide the field in ACF using some conditional logic that would be impossible to meet:
+
+![impossible conditional logic](./images/logic.png)
+
+The image shows two conditions with an AND operand. One to show the field if my blocks field has _any_ value, and another to show it if the blocks field has _no_ value. The condition will never be met and the field will not show. I updated the title of the field to include DEPRECATED as well so any user of the API would see and be discouraged from using it.
+
+Then after the backend changes were made, a follow up set of changes could remove the offending frontend code to solidify the API change.

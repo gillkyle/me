@@ -46,10 +46,10 @@ const About = () => (
             detail that comes through clean code and solid architecture.
           </Paragraph>
           <Paragraph>
-            I’m graduating from Brigham Young University with a Master’s Degree
-            in Information Systems and a focus on engineering and software
-            development. I love technology because I’m always learning something
-            new.
+            I graduated from Brigham Young University with a Master’s Degree in
+            Information Systems and a focus on engineering and software
+            development. I love that technology means I’m always learning
+            something new.
           </Paragraph>
           <Paragraph>Here are some things I'm experienced with:</Paragraph>
           <UList style={{ color: COLORS.black }}>
