@@ -204,7 +204,7 @@ const jobs = [
         instructional web tools, used by 1000+ university students and dozens of
         professors at BYU with Javascript and the Adobe Creative Cloud
       </Text>,
-      'Created promotional videos and graphics for first year writing classes that have 25,000+ views on YouTube with After Effects, Photoshop, and Illustrator',
+      'Created promotional videos and graphics for first year writing classes that have 125,000+ views on YouTube with After Effects, Photoshop, and Illustrator',
     ],
   },
 ]
