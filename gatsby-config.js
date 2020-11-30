@@ -17,7 +17,6 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-favicon',
     `gatsby-plugin-theme-ui`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -35,7 +34,7 @@ module.exports = {
         background_color: '#E6F1FF',
         theme_color: '#5390F0',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png',
+        icon: 'src/favicon.png',
       },
     },
     {
