@@ -1,3 +1,8 @@
+_Note: this version of my site has been deprecated, I've rewritten everything in a private repo that I might open source at a later date_
+
+
+---
+
 <p align="center">
   <a href="http://www.kylegill.com">
     <img alt="Gatsby" src="https://raw.githubusercontent.com/gillkyle/images/master/about-me.png" width="240" />
